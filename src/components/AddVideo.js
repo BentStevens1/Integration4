@@ -29,10 +29,13 @@ const AddVideo = () => {
 
   const postVideo = async (data) => {
     const formData = new FormData();
-    if (data.video.size > 0) {
+    console.log(data);
+    if (data.video.length > 0) {
       formData.append("files.video", data.video[0], data.video[0].name);
     }
     formData.append("data", JSON.stringify({ ...data, video: null }))
+
+    console.log(data.video);
 
     return await fetch(`${backendUrl}/api/videos?populate=*`, {
       method: "POST",
@@ -57,7 +60,6 @@ const AddVideo = () => {
   }
 
 
-
   return (
     <Stack spacing={4} sx={{ flex: 1 }} as="form" noValidate onSubmit={handleSubmit(onSubmit)}>
       <TextField sx={{ input: { color: 'white' } }}
@@ -78,7 +80,7 @@ const AddVideo = () => {
       />
       <Stack direction="row" spacing={2} alignItems="center">
         <label htmlFor="contained-button-file">
-          <Input accept="video/*" id="contained-button-file" type="file"  {...register("video")} />
+          <Input id="contained-button-file" type="file"  {...register("video")} />
           <Button variant="contained" component="span" disabled={mutation.isLoading} color="secondary">
             Select video
           </Button>
