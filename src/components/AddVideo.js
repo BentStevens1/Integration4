@@ -62,15 +62,7 @@ const AddVideo = () => {
 
   return (
     <Stack spacing={4} sx={{ flex: 1 }} as="form" noValidate onSubmit={handleSubmit(onSubmit)}>
-      <TextField sx={{ input: { color: 'white' } }}
-        id="word"
-        label="Add word"
-        variant="filled"
-        error={!!errors?.title}
-        helperText={errors?.title?.message}
-        {...register("word", {
-        })}
-      />
+  
       <Controller
         control={control}
         name="word"
