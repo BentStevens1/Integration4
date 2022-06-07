@@ -6,9 +6,13 @@ import PageOne from "./views/PageOne";
 import PageTwo from "./views/PageTwo";
 import PageThree from "./views/PageThree";
 import VideoOverview from "./views/VideoOverview";
+import VideoRecorder from "./views/VideoRecorder";
+
+import RecordVideo from "./components/RecordVideo";
 
 function App() {
   return (
+    // <RecordVideo />
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index path='/home/*' element={<Home />} />
@@ -21,6 +25,7 @@ function App() {
         <Route path="/r/:subredditId" element={<SubredditDetail/>}/>
         <Route path="/u/:userId" element={<UserDetail/>}/> */}
       </Route>
+      <Route path="/VideoRecorder" element={<VideoRecorder />} />
     </Routes>
   );
 }
