@@ -1,10 +1,11 @@
 // placeholder voor dat we de video's hebben/ kunnen opnemen
-import { Alert, Button, Snackbar, Stack, TextField, Typography } from '@mui/material';
+import { Alert, Button, Snackbar, Stack, Typography } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { Controller, useForm } from "react-hook-form";
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { styled } from '@mui/material/styles';
 import SelectChip from "./Select";
+import { Link } from "react-router-dom";
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -80,8 +81,9 @@ const AddVideo = () => {
         <Typography color="primary">{watch("video") && watch("video").length > 0 && watch("video")[0].name} </Typography>
       </Stack>
 
+      <Link to={`/VideoOverview`} >
       <LoadingButton loading={mutation.isLoading} color="secondary"
-        loadingIndicator="Adding video" type="submit" variant="contained">Add video</LoadingButton>
+        loadingIndicator="Adding video" type="submit" variant="contained">Add video</LoadingButton></Link>
       <Snackbar open={mutation.isSuccess} anchorOrigin={{ vertical: "bottom", horizontal: "right" }} autoHideDuration={3000} onClose={handleCloseSnackbar}>
         <Alert severity="success" sx={{ width: '100%' }}>
           Video added
