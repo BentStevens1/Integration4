@@ -1,11 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./views/Home";
-import Form from "./views/Form";
+import Form from "./views/Record";
 import PageOne from "./views/PageOne";
 import PageTwo from "./views/PageTwo";
 import PageThree from "./views/PageThree";
 import VideoOverview from "./views/VideoOverview";
+import VideoDetail from "./views/VideoDetail";
 
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
         <Route path="/pagetwo" element={<PageTwo />} />
         <Route path="/pagethree" element={<PageThree />} />
         <Route path="/VideoOverview" element={<VideoOverview />} />
+        <Route path="/VideoOverview/:videoId" element={<VideoDetail/>}/>
         {/* <Route path="/home/:postId" element={<Post/>} />
-        <Route path="/r/:subredditId" element={<SubredditDetail/>}/>
         <Route path="/u/:userId" element={<UserDetail/>}/> */}
       </Route>
     </Routes>
