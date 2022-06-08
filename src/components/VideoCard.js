@@ -1,8 +1,10 @@
 import { Card, CardContent, CardMedia, Chip, Stack, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
-const PostCard = ({ video }) => {
+const VideoCard = ({ id, video }) => {
 
-  return (<Card sx={{backgroundColor: 'black'}}>
+  return (<Link to={`/VideoOverview/${video.id}`}>
+  <Card sx={{backgroundColor: 'black'}}>
     
     <CardContent>
     {video.attributes.word.data &&
@@ -19,7 +21,8 @@ const PostCard = ({ video }) => {
       />
     }
     </CardContent>
-  </Card>);
+  </Card>
+  </Link>);
 }
 
-export default PostCard;
+export default VideoCard;
