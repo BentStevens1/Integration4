@@ -20,7 +20,7 @@ function VideoOverview(){
     </Typography>
     <Stack >
         <Stack direction='row' sx={{margin:'1rem', flex: 1, marginTop:'3rem', flexWrap: 'wrap', gap:'4rem', justifyContent: 'center', height: '100vh'}} >
-        {videos && videos.data.map(video => <VideoCard key={video.id} video={video} />)}
+        {videos && videos.data.map(video => <VideoCard key={video.id} id={video.id} video={video} />)}
         </Stack>
       </Stack>
   </Box>)
