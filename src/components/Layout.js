@@ -6,7 +6,7 @@ import {
   
   const Layout = () => {
   
-    return (<Box sx={{ width:'100vh', height:'100vh', backgroundColor: '#000', overflowY: 'hidden', overflowX: 'hidden'}}>
+    return (<Box sx={{ height:'100vh', backgroundColor: '#000', overflowY: 'hidden', overflowX: 'hidden'}}>
       <CssBaseline />
       <Box component="main" sx={{position: 'absolute',  zIndex: "1", overflowX: 'hidden'}}>
         <Outlet />

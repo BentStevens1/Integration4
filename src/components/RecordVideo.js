@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoRecorder from 'react-video-recorder'
+import VideoRecorder from 'react-video-recorder';
 
 
 const RecordVideo = () => {
