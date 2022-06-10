@@ -5,7 +5,7 @@ import { Controller, useForm } from "react-hook-form";
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { styled } from '@mui/material/styles';
 import SelectChip from "./Select";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -21,11 +21,11 @@ const Input = styled('input')({
 const AddVideo = () => {
   const { handleSubmit, formState: { errors }, register, control, reset, watch } = useForm({ defaultValues });
   const queryClient = useQueryClient()
+  const navigate = useNavigate();
+
   const { isLoading, data: words } = useQuery("words", async () => {
     const data = await fetch(`${backendUrl}/api/words?populate=*`).then(r => r.json());
-    console.log(data);
     return data;
-
   });
 
   const postVideo = async (data) => {
@@ -54,6 +54,7 @@ const AddVideo = () => {
 
   const onSubmit = data => {
     mutation.mutate(data)
+    navigate('/pageFour');
   }
 
   const handleCloseSnackbar = () => {
@@ -81,9 +82,9 @@ const AddVideo = () => {
         <Typography color="primary">{watch("video") && watch("video").length > 0 && watch("video")[0].name} </Typography>
       </Stack>
 
-      <Link to={`/VideoOverview`} >
+    
       <LoadingButton loading={mutation.isLoading} color="secondary"
-        loadingIndicator="Adding video" type="submit" variant="contained">Add video</LoadingButton></Link>
+        loadingIndicator="Adding video" type="submit" variant="contained">Add video</LoadingButton>
       <Snackbar open={mutation.isSuccess} anchorOrigin={{ vertical: "bottom", horizontal: "right" }} autoHideDuration={3000} onClose={handleCloseSnackbar}>
         <Alert severity="success" sx={{ width: '100%' }}>
           Video added

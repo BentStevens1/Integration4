@@ -2,11 +2,14 @@ import { Alert,Snackbar, Stack, TextField, Typography } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from 'react-query';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+
+
 
 const defaultValues = {
   content: '',
@@ -21,6 +24,7 @@ const Input = styled('input')({
 const AddWord = () => {
   const { handleSubmit, formState: { errors }, register, control, reset, watch } = useForm({ defaultValues });
   const queryClient = useQueryClient()
+  const navigate = useNavigate();
 
   const postWord = async (data) => {
     const formData = new FormData();
@@ -41,7 +45,8 @@ const AddWord = () => {
   })
 
   const onSubmit = data => {
-    mutation.mutate(data)
+    mutation.mutate(data);
+    navigate('/pageThree');
   }
 
   const handleCloseSnackbar = () => {
@@ -61,8 +66,9 @@ const AddWord = () => {
         })}
       />
 
-      <Link to="/pageThree"><LoadingButton loading={mutation.isLoading} color="secondary"
-        loadingIndicator="Adding video" type="submit" variant="contained">Start</LoadingButton></Link>
+
+      <LoadingButton loading={mutation.isLoading} color="secondary"
+        loadingIndicator="Adding video" type="submit" variant="contained">Start</LoadingButton>
       <Snackbar open={mutation.isSuccess} anchorOrigin={{ vertical: "bottom", horizontal: "right" }} autoHideDuration={3000} onClose={handleCloseSnackbar}>
         <Alert severity="success" sx={{ width: '100%' }}>
           Word added
