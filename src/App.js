@@ -7,7 +7,7 @@ import PageThree from "./views/PageThree";
 import VideoOverview from "./views/VideoOverview";
 import VideoDetail from "./views/VideoDetail";
 import VideoRecorder from "./views/VideoRecorder";
-import RecordVideo from "./components/RecordVideo";
+import PageFour from "./views/PageFour";
 
 function App() {
   return (
@@ -20,8 +20,7 @@ function App() {
         <Route path="/pagethree" element={<PageThree />} />
         <Route path="/VideoOverview" element={<VideoOverview />} />
         <Route path="/VideoOverview/:videoId" element={<VideoDetail/>}/>
-        {/* <Route path="/home/:postId" element={<Post/>} />
-        <Route path="/u/:userId" element={<UserDetail/>}/> */}
+        <Route path="/PageFour" element={<PageFour/>}/>
       </Route>
       <Route path="/VideoRecorder" element={<VideoRecorder />} />
     </Routes>
