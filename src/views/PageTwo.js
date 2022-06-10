@@ -18,7 +18,7 @@ function PageTwo(){
     return (
         <>
             <Box sx={{height: '100vh', width:'100vw', display: 'flex', flexDirection: 'column' , alignItems: 'center', justifyContent: 'space-around'}}> 
-                <Typography color="primary">Kan je het kwetsend woord ingeven dat ooit tegen jou gezegd werd?</Typography>
+                <Typography color="primary">Kan je een voorbeeld geven van een term die jou heeft gekwetst?</Typography>
                <AddWord/>
             </Box>
         </>

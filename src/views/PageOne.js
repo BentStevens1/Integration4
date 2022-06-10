@@ -18,7 +18,7 @@ function PageOne(){
     return (
         <>
             <Box sx={{height: '100vh', width:'100vw', display: 'flex', flexDirection: 'column' , alignItems: 'center', justifyContent: 'space-around'}}> 
-                <Typography color="primary">Ben je al eens benoemd geweest met een woord zoals deze?</Typography>
+                <Typography color="primary">Ben jij door zo'n termen wel eens gekwetst geraakt?</Typography>
                 <Box>
                      <Link to={`/pageTwo`}><Button variant="contained" color="secondary" sx={{padding: "1rem 4rem", margin:"2rem"}} >Ja</Button></Link>
                      <Button variant="contained" color="secondary" sx={{padding: "1rem 4rem", margin:"2rem"}}>Nee</Button>
