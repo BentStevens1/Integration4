@@ -21,7 +21,7 @@ function PageFour2(){
             <Box sx={{height: '100vh', width:'100vw', display: 'flex', flexDirection: 'column' , alignItems: 'center', justifyContent: 'space-around'}}> 
                 <Typography color="primary">gebruik jij deze term wel eens?</Typography>
                 <Link to={`/pageFive-w`}><Button>Ja</Button></Link>
-                <Link to={`/`}><Button>Nee</Button></Link>
+                <Link to={`/pageSix-w`}><Button>Nee</Button></Link>
             </Box>
         </>
     )
