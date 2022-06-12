@@ -8,7 +8,7 @@ function PageSix2() {
             <Typography>Dat is menselijk!</Typography>
             <Typography>Dit kan je beter zeggen dan blank</Typography>
             <Typography>Wit</Typography>
-            <Link to={`/end`}><Button>verder</Button></Link>
+            <Link to={`/videoOverview`}><Button>verder</Button></Link>
         </>
     );
 }
