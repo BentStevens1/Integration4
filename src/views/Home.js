@@ -1,7 +1,7 @@
-import Camera from '../components/Camera';
-import AddVideo from '../components/AddVideo';
-import {Grid, Paper} from "@mui/material";
+import { Paper} from "@mui/material";
 import { styled } from '@mui/material/styles';
+import { Typography, Button, Box} from '@mui/material';
+import { Link} from "react-router-dom";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -13,18 +13,13 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function Home() {
   return (
-    <Grid className="App"  >
-    <Grid >
-      <Item xs={1}>
-         <Camera sx={{ zIndex: "tooltip"}} />
-      </Item>
-        </Grid>
-    <Grid className="App"  >
-      <Item xs={1}>
-         <AddVideo sx={{ zIndex: "modal"}}  />
-      </Item>
-       </Grid>
-    </Grid>
+      <Box sx={{height: '100vh', width:'100vw', display: 'flex', flexDirection: 'column' , alignItems: 'center', justifyContent: 'space-around'}}>
+          <Typography>...Video...</Typography>
+          
+          <Link to={`/pageOne`}><Button variant="contained" color="secondary" sx={{padding: "1rem 4rem", margin:"2rem"}}>Verder</Button></Link>
+      </Box>
+
+    
   );
 }
 

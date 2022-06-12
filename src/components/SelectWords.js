@@ -4,7 +4,9 @@ import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-
+import { Alert, Button, Snackbar, Stack, Typography } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
+import { useMutation, useQuery, useQueryClient } from 'react-query';
 
 
 const CheckboxesGroup = ({ words }) => {
@@ -50,6 +52,7 @@ const CheckboxesGroup = ({ words }) => {
     };
 
     const { one, two, three, four, five, six } = state;
+    
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -94,6 +97,13 @@ const CheckboxesGroup = ({ words }) => {
                     />
                 </FormGroup>
             </FormControl>
+            {/* <LoadingButton loading={mutation.isLoading} color="secondary"
+        loadingIndicator="Adding video" type="submit" variant="contained">Add video</LoadingButton>
+      <Snackbar open={mutation.isSuccess} anchorOrigin={{ vertical: "bottom", horizontal: "right" }} autoHideDuration={3000} onClose={handleCloseSnackbar}>
+        <Alert severity="success" sx={{ width: '100%' }}>
+          Antwoord verstuurd
+        </Alert>
+      </Snackbar> */}
         </Box>
     );
 }

@@ -1,6 +1,7 @@
 import VideoCard from '../components/VideoCard';
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography, Button } from '@mui/material';
 import { useQuery } from 'react-query';
+import { Link } from "react-router-dom";
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -23,6 +24,7 @@ function VideoOverview(){
         {videos && videos.data.map(video => <VideoCard key={video.id} id={video.id} video={video} />)}
         </Stack>
       </Stack>
+      <Link to={`/End`}><Button>Ik ben klaar</Button></Link>
   </Box>)
 }
 

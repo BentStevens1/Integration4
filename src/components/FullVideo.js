@@ -26,7 +26,6 @@ const VideoCard = () => {
                             height='100vh'
                             controls={true}
                             playing= {true}
-
                         />
                     }
                 </>)}

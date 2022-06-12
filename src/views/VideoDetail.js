@@ -1,9 +1,12 @@
 import FullVideo from '../components/FullVideo';
+import { Typography, Button, Box } from '@mui/material';
+import { Link } from "react-router-dom";
 
 function VideoDetail() {
   return (
     <div >
-      <FullVideo />
+      <FullVideo />  
+      <Link to={`/videoOverview`}><Button>terug</Button></Link>
     </div>
   );
 }

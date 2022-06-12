@@ -5,7 +5,7 @@ import { Link} from "react-router-dom";
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
-function PageFour(){
+function PageFour2(){
 
     const { isLoading, data: words } = useQuery("words", async () => {
         const data = await fetch(`${backendUrl}/api/words?populate=*`).then(r => r.json());
@@ -15,20 +15,16 @@ function PageFour(){
 
       console.log(words);
 
-    // component waar je een select kan doen en de data ophaalt van de db met woorden, geef het ingevulde woord mee van de input an de worige vraag!!!
+      // geef gekozen woord mee
     return (
         <>
             <Box sx={{height: '100vh', width:'100vw', display: 'flex', flexDirection: 'column' , alignItems: 'center', justifyContent: 'space-around'}}> 
-                <Typography color="primary">Selecteer de termen die jij als kwetsend ervaart</Typography>
-                {isLoading && <p>Words loading...</p>}
-                {words && (<>
-                <CheckboxesGroup words={words} />
-                </>)}
-                <Link to={`/VideoOverview`}><Button>dit kwetst mij niet</Button></Link>
-                <Link to={`/VideoRecorder`}><Button>Verder</Button></Link>
+                <Typography color="primary">gebruik jij deze term wel eens?</Typography>
+                <Link to={`/pageFive-w`}><Button>Ja</Button></Link>
+                <Link to={`/`}><Button>Nee</Button></Link>
             </Box>
         </>
     )
 }
 
-export default PageFour;
+export default PageFour2;

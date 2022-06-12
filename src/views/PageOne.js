@@ -21,7 +21,7 @@ function PageOne(){
                 <Typography color="primary">Ben jij door zo'n termen wel eens gekwetst geraakt?</Typography>
                 <Box>
                      <Link to={`/pageTwo`}><Button variant="contained" color="secondary" sx={{padding: "1rem 4rem", margin:"2rem"}} >Ja</Button></Link>
-                     <Button variant="contained" color="secondary" sx={{padding: "1rem 4rem", margin:"2rem"}}>Nee</Button>
+                     <Link to={`/pageTwo-w`}><Button variant="contained" color="secondary" sx={{padding: "1rem 4rem", margin:"2rem"}}>Nee</Button></Link>
                 </Box>
                 </Box>
         </>

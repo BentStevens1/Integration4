@@ -1,4 +1,4 @@
-import { Alert,Snackbar, Stack, TextField, Typography } from '@mui/material';
+import { Alert,Snackbar, Stack, TextField, Typography, Button } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from 'react-query';
@@ -66,9 +66,9 @@ const AddWord = () => {
         })}
       />
 
-
+<Link to={`/pageFour`}><Button>overslaan</Button></Link>
       <LoadingButton loading={mutation.isLoading} color="secondary"
-        loadingIndicator="Adding video" type="submit" variant="contained">Start</LoadingButton>
+        loadingIndicator="Adding video" type="submit" variant="contained">Verder</LoadingButton>
       <Snackbar open={mutation.isSuccess} anchorOrigin={{ vertical: "bottom", horizontal: "right" }} autoHideDuration={3000} onClose={handleCloseSnackbar}>
         <Alert severity="success" sx={{ width: '100%' }}>
           Word added
