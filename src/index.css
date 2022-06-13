@@ -29,3 +29,12 @@ code {
 .record {
   height: 100vh;
 }
+
+.input {
+  padding: 2rem;
+  background-image: url('img/Vector.png');
+  background-repeat: no-repeat;
+  background-position-y: 10px;
+  background-size: 100% 50%;
+  z-index: 1;
+}
