@@ -15,7 +15,7 @@ const RecordVideo = () => {
     const [url, setUrl] = useState("");
     const [videoBlob, setVideoBlob] = useState(null);
  
-    const { handleSubmit, formState: { errors }, reset,  } = useForm();
+    const { handleSubmit, reset,  } = useForm();
     const queryClient = useQueryClient()
 
 
@@ -70,7 +70,7 @@ const RecordVideo = () => {
                 }}
                 // timeLimit={30000}
                 isOnInitially
-                
+
                 //Replay controls and video not on loop 
                 replayVideoAutoplayAndLoopOff
                 showReplayControls
