@@ -12,30 +12,17 @@ let theme = createTheme({
   palette: {
     type: 'light',
     primary: {
-      main: '#ffffff',
-      contrastText: '#ffffff',
-      light: '#3b3b3b',
-      dark: '#000000',
+      main: '#D9EB63',
     },
     secondary: {
-      main: '#1C6F81',
-      contrastText: '#ffffff',
+      main: '#ffffff',
     },
     text: {
-      primary: 'rgba(0,0,0,0.87)',
-      secondary: '#ffffff',
-      disabled: 'rgba(255,255,255,0.38)',
-      hint: 'rgba(255,255,255,0.38)',
+      primary: '#ffffff',
+      secondary: '#151515',
     },
     error: {
       main: '#ff1100',
-    },
-    background: {
-      default: '#101010',
-      paper: '#ffffff',
-    },
-    info: {
-      main: '#4da9ff',
     },
   },
   components: {
@@ -50,22 +37,30 @@ let theme = createTheme({
       },
     },
     typography: {
-      fontFamily: '"jost", "Helvetica", "Arial", sans-serif',
+      fontFamily: '"Bebas Neue", "Open Sans"',
       fontWeightMedium: 300,
       fontWeightBold: 600,
       h1: {
-        fontSize: '2.5rem',
+        fontSize: '6rem',
         fontWeight: 300,
       },
       h2: {
-        fontSize: '2rem',
+        fontSize: '4rem',
       },
       h3: {
-        fontSize: '1.5rem',
+        fontSize: '3rem',
         fontWeight: 300,
       },
-      subtitle1: {
-        fontSize: '1rem',
+      p: {
+        fontSize: '2.25rem',
+        fontWeight: 300,
+      },
+      small: {
+        fontSize: '1.6rem',
+        fontWeight: 300,
+      },
+      BigInt: {
+        fontSize: '10rem',
         fontWeight: 300,
       },
     },
