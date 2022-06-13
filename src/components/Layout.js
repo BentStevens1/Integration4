@@ -8,10 +8,10 @@ import {
   
     return (<Box sx={{ height:'100vh', backgroundColor: '#000', overflowY: 'hidden', overflowX: 'hidden'}}>
       <CssBaseline />
-      <Box component="main" sx={{position: 'absolute',  zIndex: "1", overflowX: 'hidden'}}>
+      <Box component="main" sx={{position: 'absolute',  zIndex: "3", overflowX: 'hidden'}}>
         <Outlet />
       </Box>
-      <Camera sx={{position: 'fixed', zIndex: "-1", overflowY: 'hidden' }} />
+      <Camera sx={{position: 'fixed', zIndex: "-99", overflowY: 'hidden' }} />
     </Box >);
   }
   

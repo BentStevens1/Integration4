@@ -34,7 +34,14 @@ code {
   padding: 2rem;
   background-image: url('img/Vector.png');
   background-repeat: no-repeat;
-  background-position-y: 10px;
   background-size: 100% 50%;
+  z-index: 1;
+}
+
+.title {
+  padding: 2rem;
+  background-image: url('img/Vector.png');
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
   z-index: 1;
 }

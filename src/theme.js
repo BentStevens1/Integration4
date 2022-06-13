@@ -24,7 +24,7 @@ let theme = createTheme({
       secondary: '#151515',
     },
     error: {
-      main: '#ff1100',
+      main: '#F00090',
     },
   },
   components: {

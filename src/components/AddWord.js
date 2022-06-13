@@ -53,17 +53,21 @@ const AddWord = () => {
 
 
     return (
-        <Stack class='input' spacing={4} as="form" noValidate onSubmit={handleSubmit(onSubmit)} >
-            <TextField sx={{ input: { color: 'text.secondary', fontFamily:'Bebas Neue'} }}
+        <Stack className='input' spacing={4} as="form" noValidate onSubmit={handleSubmit(onSubmit)} >
+            <TextField sx={{color:'text.secondary', input: { color: 'text.secondary', fontFamily:'Bebas Neue'} }}
                 id="content"
                 label="Schrijf jouw woord hier..."
                 variant="standard"
                 fontFamily="Bebas Neue"
-                error={!!errors?.title}
-                helperText={errors?.title?.message}
+                required
+                color="text"
+                error={!!errors?.content}
+                helperText={errors?.content?.message}
                 {...register("content", {
+                    required: 'Vul aub een woord in of klik op overslaan'
                 })}
             />
+              
 
             <Box>
                 <Link to={`/pageFour`}><Button sx={{marginTop:"3rem", width:'14rem', color:'text.primary', fontFamily:'Bebas Neue'}}>overslaan</Button></Link>

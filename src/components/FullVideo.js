@@ -1,4 +1,4 @@
-import { Card} from "@mui/material";
+import { Card, Typography} from "@mui/material";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import ReactPlayer from 'react-player'
@@ -17,15 +17,18 @@ const VideoCard = () => {
         <article>
             {error && <p>Video could not be loaded</p>}
             {isLoading && <p>Video loading...</p>}
-            <Card >
+            <Card sx={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}} >
                 {video && (<>
-                    {video.data.attributes.video.data &&
+                { video.data.attributes.word.data &&
+                <Typography className="title" fontFamily="Bebas Neue" variant="h3" sx={{color:"text.secondary", zIndex: "2", position:"absolute", top: "1rem"}} >Ervaring met het woord {video.data.attributes.word.data.attributes.content}</Typography>
+                   } {video.data.attributes.video.data &&
                            <ReactPlayer
                             url={video.data.attributes.video.data.attributes.url}
                             width='100vw'
                             height='100vh'
-                            controls={true}
+                            // controls={true}
                             playing= {true}
+                            sx={{zIndex:" 1", position:"absolute"}}
                         />
                     }
                 </>)}

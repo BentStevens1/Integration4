@@ -98,7 +98,7 @@ const CheckboxesGroup = ({ words }) => {
                 </FormGroup>
             </FormControl>
             {/* <LoadingButton loading={mutation.isLoading} color="secondary"
-        loadingIndicator="Adding video" type="submit" variant="contained">Add video</LoadingButton>
+        loadingIndicator="Adding words" type="submit" variant="contained">verder</LoadingButton>
       <Snackbar open={mutation.isSuccess} anchorOrigin={{ vertical: "bottom", horizontal: "right" }} autoHideDuration={3000} onClose={handleCloseSnackbar}>
         <Alert severity="success" sx={{ width: '100%' }}>
           Antwoord verstuurd

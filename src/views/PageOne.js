@@ -17,11 +17,11 @@ function PageOne(){
     }
     return (
         <>
-            <Box sx={{height: '100vh', width:'100vw', display: 'flex', flexDirection: 'column' , alignItems: 'center', justifyContent: 'space-around'}}> 
-                <Typography color="primary">Ben jij door zo'n termen wel eens gekwetst geraakt?</Typography>
+            <Box sx={{height: '100vh', width:'100vw', display: 'flex', flexDirection: 'column' , alignItems: 'center', justifyContent: 'space-between'}}> 
+                <Typography fontFamily={"Bebas Neue"} variant={'h3'} color="text" sx={{margin: '3rem', textAlign: 'center'}}>Ben jij al eens gekwetst geraakt door woorden zoals die in de video?</Typography>
                 <Box>
-                     <Link to={`/pageTwo`}><Button variant="contained" color="secondary" sx={{padding: "1rem 4rem", margin:"2rem"}} >Ja</Button></Link>
-                     <Link to={`/pageTwo-w`}><Button variant="contained" color="secondary" sx={{padding: "1rem 4rem", margin:"2rem"}}>Nee</Button></Link>
+                     <Link to={`/pageTwo`}><Button variant="contained" color="secondary" sx={{padding: ".5rem", margin:"2rem", fontFamily: 'Bebas Neue', fontSize:'2.25rem', width:'14rem'}} >Ja</Button></Link>
+                     <Link to={`/pageTwo-w`}><Button variant="contained" color="secondary" sx={{padding: ".5rem", margin:"2rem", fontFamily: 'Bebas Neue', fontSize:'2.25rem', width:'14rem'}}>Nee</Button></Link>
                 </Box>
                 </Box>
         </>

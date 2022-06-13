@@ -14,7 +14,7 @@ const Item = styled(Paper)(({ theme }) => ({
 function Home() {
   return (
       <Box sx={{height: '100vh', width:'100vw', display: 'flex', flexDirection: 'column' , alignItems: 'center', justifyContent: 'space-around'}}>
-          <Typography>...Video...</Typography>
+          <Typography sx={{fontFamily:'typography.fontFamily'}}>...Video...</Typography>
           
           <Link to={`/pageOne`}><Button variant="contained" color="secondary" sx={{padding: "1rem 4rem", margin:"2rem", color:'text.secondary'}}>Verder</Button></Link>
       </Box>
