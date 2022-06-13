@@ -2,16 +2,22 @@ import { Card, Typography} from "@mui/material";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import ReactPlayer from 'react-player'
+import { useNavigate } from "react-router-dom";
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const VideoCard = () => {
     const { videoId } = useParams();
+    const navigate = useNavigate();
 
     const { isLoading, error, data: video } = useQuery(["video", videoId], async () => {
         const data = await fetch(`${backendUrl}/api/videos/${videoId}?populate=*`).then(r => r.json());
         return data;
     });
+
+    const navigateBack = () => {
+        navigate('/VideoOverview');
+    } 
 
     return (
         <article>
@@ -29,6 +35,7 @@ const VideoCard = () => {
                             // controls={true}
                             playing= {true}
                             sx={{zIndex:" 1", position:"absolute"}}
+                            onEnded={navigateBack}
                         />
                     }
                 </>)}
