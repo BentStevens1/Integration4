@@ -5,6 +5,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
+import { Typography } from '@mui/material';
 
 
 
@@ -31,30 +32,29 @@ const CheckboxesGroup2 = () => {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <FormControl sx={{ m: 6 }} component="fieldset" variant="standard">
-                <FormGroup>
-                    <FormControlLabel
-
+            <FormControl component="fieldset" variant="standard">
+                <FormGroup sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                    <FormControlLabel 
                         control={
-                            <Checkbox checked={one} onChange={handleChange} name='niet kwetsend' />
+                            <Checkbox checked={one} onChange={handleChange} name='niet kwetsend' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 } , marginRight:"2rem"}}/>
                         }
-                        label='Ik vind dit niet kwetsend'
+                        label={<Typography sx={{ typography: "h2", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Ik vind dit niet kwetsend</Typography>}
                     />
-                    <FormControlLabel
+                    <FormControlLabel sx={{ marginTop: "5rem" }}
                         control={
-                            <Checkbox checked={two} onChange={handleChange} name='wist niet' />
+                            <Checkbox checked={two} onChange={handleChange} name='wist niet' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 }, marginRight: "2rem"}} />
                         }
-                        label='Ik wist nog niet dat dit mensen kwetst'
+                        label={<Typography sx={{ typography: "h2", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Ik wist nog niet dat dit mensen kwetst</Typography>}
                     />
-                    <FormControlLabel
+                    <FormControlLabel sx={{ marginTop: "5rem" }}
                         control={
-                            <Checkbox checked={three} onChange={handleChange} name='vrienden' />
+                            <Checkbox checked={three} onChange={handleChange} name='vrienden' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 }, marginRight: "2rem"}}/>
                         }
-                        label='Mijn vrienden gebruiken het'
+                        label={<Typography sx={{ typography: "h2", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Mijn vrienden gebruiken het</Typography>}
                     />
-                    <FormControlLabel
+                    <FormControlLabel sx={{ marginTop: "5rem" }}
                         control={
-                            <TextField onChange={handleChange} name='Anders' placeholder='Anders...' />
+                            <TextField onChange={handleChange} name='Anders' placeholder='Anders...' inputProps={{ style: { fontSize: 50, fontFamily: "Bebas Neue" } }} InputLabelProps={{ style: { fontSize: 50, fontFamily: "Bebas Neue"}}} />
                         }
                     />
                 </FormGroup>
