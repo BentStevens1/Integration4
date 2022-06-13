@@ -13,14 +13,15 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function End() {
     return (
-        <Box sx={{ height: '100vh', width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around' }}>
-            <Typography>Bedankt</Typography>
-            <Typography>voor jouw medewerking</Typography>
-            <Typography>Volg ons op sociale media</Typography>
+        <Box sx={{ height: '100vh', width: '100vw', padding:"3rem"}}>
+            <Box className="title" sx={{ display: "flex", flexDirection: "row", gap:"1rem", alignItems:"center", color:"text.secondary"}}>
+                <Typography fontSize={"6rem"} fontFamily="Bebas Neue" >Bedankt</Typography>
+                <Typography fontSize={"2rem"} fontFamily="Bebas Neue" >voor jouw medewerking</Typography>
+            </Box>
+            <Typography fontFamily="Bebas Neue" variant="h2" margin={"3rem"} textAlign={"center"}>Volg ons op sociale media</Typography>
             <Typography>...qr-code...</Typography>
-            <Typography>spread the sticker and the message</Typography>
-
-            <Link to={`/`}><Button>return to start</Button></Link>
+            <Typography fontFamily="Bebas Neue" textAlign={"center"}>spread the sticker and the message</Typography>
+            <Link to={`/`}><Button sx={{ fontFamily: "Bebas Neue" }}>return to start</Button></Link>
 
         </Box>
 

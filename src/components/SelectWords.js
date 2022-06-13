@@ -39,7 +39,7 @@ const CheckboxesGroup = ({ words }) => {
         three: false,
         four: false,
         five: false,
-        Six: false,
+        six: false,
     });
 
 

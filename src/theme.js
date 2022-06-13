@@ -61,7 +61,7 @@ let theme = createTheme({
         fontSize: '1.6rem',
         fontWeight: 300,
       },
-      BigInt: {
+      big: {
         fontSize: '10rem',
         fontWeight: 300,
       },

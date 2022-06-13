@@ -25,7 +25,7 @@ function PageFour() {
                     <CheckboxesGroup words={words} />
                 </>)}
                 <Box>
-                    <Link to={`/VideoOverview`}><Button sx={{ marginTop: "3rem", width:"14rem", color:'text.primary'}}>dit kwetst mij niet</Button></Link>
+                    <Link to={`/VideoOverview`}><Button sx={{ marginTop: "3rem", width:"14rem", color:'text.primary', fontFamily:"Bebas Neue"}}>dit kwetst mij niet</Button></Link>
                     <Link to={`/VideoRecorder`}><Button variant="contained" color="secondary" sx={{ marginTop: "3rem", width: '14rem', padding: '.5rem', fontFamily: 'Bebas Neue' }}>Verder</Button></Link>
                 </Box>
             </Box>
