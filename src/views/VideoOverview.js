@@ -5,27 +5,48 @@ import { Link } from "react-router-dom";
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
-function VideoOverview(){
+function VideoOverview() {
+
+
 
   const { isLoading, error, data: videos } = useQuery("videos", async () => {
     const data = await fetch(`${backendUrl}/api/videos?populate=*`).then(r => r.json());
     return data;
   });
 
-    return (
-      <Box>
-    {isLoading && <p>Loading...</p>}
-    {error && <p>Data could not be loaded, please check your internet connection and try again</p>}
-    <Typography align='center' variant='h2' sx={{color: 'white'}} >
-    Bekijk de ervaringen van anderen
-    </Typography>
-    <Stack >
-        <Stack direction='row' sx={{margin:'1rem', flex: 1, marginTop:'3rem', flexWrap: 'wrap', gap:'4rem', justifyContent: 'center', height: '100vh'}} >
-        {videos && videos.data.map(video => <VideoCard key={video.id} id={video.id} video={video} />)}
+  // const getRandomInt = (max) => {
+  //   return Math.floor(Math.random() * max);
+  // }
+
+  // var arrayVideos = [];
+
+  // if (!isLoading) {
+  //   const length = videos.data.length;
+
+  //   while (arrayVideos.length < 5) {
+  //     var random = videos.data[getRandomInt(length)];
+  //     if (arrayVideos.includes(random) === false && random !== videos.data[length - 1].attributes.url) {
+  //       arrayVideos.push(random);
+  //     }
+  //   }
+
+  //   console.log(arrayVideos);
+
+  // };
+  return (
+    <Box sx={{ padding: '3rem' }}>
+      {isLoading && <p>Videos aan het laden...</p>}
+      {error && <p>Data could not be loaded, please check your internet connection and try again</p>}
+      <Typography align='center' variant='h3' fontFamily={"bebas Neue"} sx={{ color: 'white' }} >
+        Bekijk anderen hun ervaringen
+      </Typography>
+      <Stack >
+        <Stack direction='row' sx={{ flex: 1, marginTop: '3rem', flexWrap: 'wrap', justifyContent: 'center', height: '100vh' }} >
+          {videos && videos.data.map(video => <VideoCard key={video.id} id={video.id} video={video} sx={{ position: "absolute" }} />)}
         </Stack>
       </Stack>
-      <Link to={`/End`}><Button>Ik ben klaar</Button></Link>
-  </Box>)
+      <Link to={`/End`}><Button variant="contained" color="secondary" sx={{position:'fixed', bottom: '3rem', right:'3rem', width: '14rem' , fontFamily:"Bebas neue", zIndex: "3"}}>Ik ben klaar</Button></Link>
+    </Box>)
 }
 
 export default VideoOverview;

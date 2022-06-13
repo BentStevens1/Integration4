@@ -1,23 +1,28 @@
 import { Card, CardContent, CardMedia, Chip, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const VideoCard = ({ id, video }) => {
+const VideoCard = ({ video }) => {
+
+    function getRandomInt(min, max) {
+        return Math.random() * (max - min) + min;
+      }
 
   return (<Link to={`/VideoOverview/${video.id}`}>
-  <Card sx={{backgroundColor: 'black'}}>
+  <Card sx={{backgroundColor: 'transparent'}}>
     
-    <CardContent>
-    {video.attributes.word.data &&
-      <Typography align='center' variant="h3" color="text.secondary" component="h2">
-    {video.attributes.word.data.attributes.content}
-      </Typography>
-    }
+    <CardContent sx={{position:"relative" ,display:"flex", justifyContent:"center", alignItems:"center"}}>
+    <CardMedia
+    component="img"
+    src={require("../img/Frame.png")}
+    sx={{zIndex:"2", position:"absolute", width:"4rem" }}
+    />
       {video.attributes.video.data &&
       <CardMedia
         component="img"
         alt={video.attributes.video.data.attributes.name}
-        width="200px"
+        height={getRandomInt(50, 200)}
         src={video.attributes.video.data.attributes.previewUrl}
+        sx={{zIndex:"1"}}
       />
     }
     </CardContent>
