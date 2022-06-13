@@ -1,6 +1,8 @@
 import { createTheme } from '@mui/material/styles';
 import { forwardRef } from "react";
 import { Link as RouterLink } from "react-router-dom";
+import './index.css';
+
 
 const LinkBehavior = forwardRef((props, ref) => {
   const { href, ...other } = props;
@@ -37,7 +39,7 @@ let theme = createTheme({
       },
     },
     typography: {
-      fontFamily: '"Bebas Neue", "Open Sans"',
+      fontFamily: 'Bebas Neue',
       fontWeightMedium: 300,
       fontWeightBold: 600,
       h1: {
