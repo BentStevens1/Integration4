@@ -6,8 +6,8 @@ function PageThree2(){
 
     return (
         <>
-           <FullVideo />  
-      <Link to={`/pagefour-w`}><Button>Volgende</Button></Link>
+          <FullVideo />  
+          <Link to={`/pagefour-w`}><Button>Volgende</Button></Link>
         </>
       );
 }

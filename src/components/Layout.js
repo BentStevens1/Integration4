@@ -11,7 +11,7 @@ import {
       <Box component="main" sx={{position: 'absolute',  zIndex: "1", overflowX: 'hidden'}}>
         <Outlet />
       </Box>
-      <Camera sx={{position: 'fixed', zIndex: "-1", overflowY: 'hidden' }} />
+      {/* <Camera sx={{position: 'fixed', zIndex: "-1", overflowY: 'hidden' }} /> */}
     </Box >);
   }
   
