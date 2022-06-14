@@ -38,10 +38,50 @@ code {
   z-index: 1;
 }
 
+.input2 {
+  padding: 2rem 10rem;
+  background-image: url('img/Vector.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
 .title {
   padding: 2rem;
   background-image: url('img/Vector.png');
   background-repeat: no-repeat;
   background-size: 100% 90%;
+  z-index: 1;
+}
+
+.reason1 {
+  padding: 2rem 6rem;
+  background-image: url('img/option1.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+.reason2 {
+  padding: 2rem 3rem;
+  background-image: url('img/option2.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+.reason3 {
+  padding: 1rem 6rem;
+  background-image: url('img/option3.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+.title-w {
+  padding: 3rem 1rem;
+  background-image: url('img/title-w.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   z-index: 1;
 }

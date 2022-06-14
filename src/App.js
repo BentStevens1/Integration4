@@ -13,6 +13,8 @@ import PageFour from "./views/PageFour";
 import PageFour2 from "./views/PageFour-w";
 import PageFive2 from "./views/PageFive-w";
 import PageSix2 from "./views/PageSix-w";
+import PageSixW2 from "./views/PageSix-w2";
+
 import End from "./views/End";
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
         <Route path="/PageFour-w" element={<PageFour2/>}/>
         <Route path="/PageFive-w" element={<PageFive2/>}/>
         <Route path="/PageSix-w" element={<PageSix2/>}/>
+        <Route path="/PageSix-w2" element={<PageSixW2 />} />
         <Route path="/End" element={<End/>}/>
       </Route>
       <Route path="/VideoRecorder" element={<VideoRecorder />} />
