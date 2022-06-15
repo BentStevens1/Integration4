@@ -45,7 +45,7 @@ function VideoOverview() {
           {videos && videos.data.map(video => <VideoCard key={video.id} id={video.id} video={video} sx={{ position: "absolute" }} />)}
         </Stack>
       </Stack>
-      <Link to={`/End`}><Button variant="contained" color="secondary" sx={{position:'fixed', bottom: '3rem', right:'3rem', width: '14rem' , fontFamily:"Bebas neue", zIndex: "3"}}>Ik ben klaar</Button></Link>
+      <Link to={`/End`}><Button variant="contained" color="secondary" sx={{typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue", zIndex: "3"}}>Ik ben klaar</Button></Link>
     </Box>)
 }
 
