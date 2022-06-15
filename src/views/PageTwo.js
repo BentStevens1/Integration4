@@ -1,5 +1,6 @@
 import { Typography, Box } from '@mui/material';
 import AddWord from '../components/AddWord';
+import {  React } from "react";
 
 function PageTwo(){
     var style= {

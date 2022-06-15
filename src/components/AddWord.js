@@ -53,12 +53,12 @@ const AddWord = () => {
 
 
     return (
-        <Stack className='input' spacing={4} as="form" noValidate onSubmit={handleSubmit(onSubmit)} >
-            <TextField sx={{color:'text.secondary', input: { color: 'text.secondary', fontFamily:'Bebas Neue'} }}
+        <Stack className='input' spacing={10} as="form" noValidate onSubmit={handleSubmit(onSubmit)} >
+            <TextField sx={{color:'text.secondary', input: { color: 'text.secondary', fontFamily:'Bebas Neue', fontSize: "6rem"} }}
                 id="content"
                 label="Schrijf jouw woord hier..."
                 variant="standard"
-                fontFamily="Bebas Neue"
+                
                 required
                 color="text"
                 error={!!errors?.content}
@@ -70,9 +70,9 @@ const AddWord = () => {
               
 
             <Box>
-                <Link to={`/pageFour`}><Button sx={{marginTop:"3rem", width:'14rem', color:'text.primary', fontFamily:'Bebas Neue'}}>overslaan</Button></Link>
+                <Link to={`/pageFour`}><Button sx={{ typography: "h3", color: "secondary.main", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue"}}>overslaan</Button></Link>
                 <LoadingButton loading={mutation.isLoading} color="secondary"
-                    loadingIndicator="Adding word" type="submit" variant="contained" sx={{marginTop:"3rem", width:'14rem', padding:'.5rem', fontFamily:'Bebas Neue'}}>Verder</LoadingButton>
+                    loadingIndicator="Adding word" type="submit" variant="contained" sx={{typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", marginBottom: "3rem", fontFamily: "Bebas Neue" }}>Verder</LoadingButton>
                 <Snackbar open={mutation.isSuccess} anchorOrigin={{ vertical: "bottom", horizontal: "right", fontFamily:'Bebas Neue'}} autoHideDuration={3000} onClose={handleCloseSnackbar}>
                     <Alert severity="success" sx={{ width: '100%' }}>
                         Woord ontvangen

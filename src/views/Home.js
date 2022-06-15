@@ -16,7 +16,7 @@ function Home() {
       <Box sx={{height: '100vh', width:'100vw', display: 'flex', flexDirection: 'column' , alignItems: 'center', justifyContent: 'space-around'}}>
           <Typography sx={{fontFamily:'typography.fontFamily'}}>...Video...</Typography>
           
-          <Link to={`/pageOne`}><Button variant="contained" color="secondary" sx={{padding: "1rem 4rem", margin:"2rem", color:'text.secondary'}}>Verder</Button></Link>
+          <Link to={`/pageOne`}><Button variant="contained" color="secondary" sx={{typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Verder</Button></Link>
       </Box>
 
     
