@@ -8,18 +8,18 @@ import Checkbox from '@mui/material/Checkbox';
 import { useForm } from "react-hook-form";
 import { Button } from '@mui/material';
 import { Link } from "react-router-dom";
+import useStore from '../store/Store';
 
 
 const CheckboxesGroup = ({ words }) => {
 
+  const selectedWs = useStore((state) => state.selectedWs)
+  const AddSelected = useStore((state) => state.AddSelectedWords)
+  const RemoveSelected = useStore((state) => state.RemoveWord)
 
-// const useStore = create((set) => ({
-//   selectedWords: 0,
-//   setSelectedW: () => set((state) => ({ selectedWords})),
-// }))
 
   // store in zustand ipv state zodat je ze in alle andere pagina's ook kan gebruiken
-  const [selectedWords, setSelectedWords] = useState([])
+  // const [selectedWords, setSelectedWords] = useState([])
 
   const { handleSubmit } = useForm({
     defaultValues: {
@@ -29,16 +29,31 @@ const CheckboxesGroup = ({ words }) => {
 
   const onCheckboxChange = (e, word) => {
     if (e.currentTarget.checked) {
-      setSelectedWords([...selectedWords, word])
+      AddSelected(word);
     } else {
-      const index = selectedWords.findIndex(o => o.id === word.id)
+      const index = selectedWs.findIndex(o => o.id === word.id)
+      console.log(index);
       if (index > -1) {
-        const newWords = [...selectedWords];
+        const newWords = [...selectedWs];
         newWords.splice(index, 1);
-        setSelectedWords(newWords);
+        RemoveSelected(newWords);
       }
     }
   }
+
+  console.log(selectedWs);
+  // const onCheckboxChange = (e, word) => {
+  //   if (e.currentTarget.checked) {
+  //     setSelectedWords([...selectedWords, word])
+  //   } else {
+  //     const index = selectedWords.findIndex(o => o.id === word.id)
+  //     if (index > -1) {
+  //       const newWords = [...selectedWords];
+  //       newWords.splice(index, 1);
+  //       setSelectedWords(newWords);
+  //     }
+  //   }
+  // }
 
   const onSubmit = () => {
   };
@@ -50,11 +65,20 @@ const CheckboxesGroup = ({ words }) => {
           {
             words.map(word => <FormControlLabel key={word.id}
               control={
-                <Checkbox value={word.attributes.content} onChange={e => onCheckboxChange(e, word)} checked={selectedWords.find(o => o.id === word.id) !== undefined} />
+                <Checkbox value={word.attributes.content} onChange={e => onCheckboxChange(e, word)} checked={selectedWs.find(o => o.id === word.id) !== undefined} />
               }
               label={word.attributes.content}
             />)
           }
+
+{/* {
+            words.map(word => <FormControlLabel key={word.id}
+              control={
+                <Checkbox value={word.attributes.content} onChange={e => onCheckboxChange(e, word)} checked={selectedWords.find(o => o.id === word.id) !== undefined} />
+              }
+              label={word.attributes.content}
+            />)
+          } */}
 
         </FormGroup>
       </FormControl>
