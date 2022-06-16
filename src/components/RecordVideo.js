@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from 'react-query';
 
 
-
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 
@@ -26,7 +25,7 @@ const RecordVideo = () => {
         formData.append("files.video", blob, 'video.mp4');
         return await fetch(`${backendUrl}/api/videos?populate=*`, {
             method: "POST",
-            body: formData,
+            body: formData
         }).then(r => r.json());
     }
 

@@ -53,26 +53,28 @@ const AddWord = () => {
 
 
     return (
-        <Stack className='input' spacing={10} as="form" noValidate onSubmit={handleSubmit(onSubmit)} >
-            <TextField sx={{color:'text.secondary', input: { color: 'text.secondary', fontFamily:'Bebas Neue', fontSize: "6rem"} }}
-                id="content"
-                label="Schrijf jouw woord hier..."
-                variant="standard"
-                
-                required
-                color="text"
-                error={!!errors?.content}
-                helperText={errors?.content?.message}
-                {...register("content", {
-                    required: 'Vul aub een woord in of klik op overslaan'
-                })}
-            />
-              
+        <Stack as="form" noValidate onSubmit={handleSubmit(onSubmit)} >
+            <TextField className='input2' sx={{ color: 'text.secondary', padding:"2rem 1rem", input: { color: 'text.secondary', fontFamily: 'Bebas Neue', fontSize: "5rem" } }}
+                    id="content"
+                    variant="standard"
+                    placeholder="exotisch"
+                    required
+                    color="text"
+                    error={!!errors?.content}
+                    helperText={errors?.content?.message}
+                    {...register("content", {
+                        required: 'Vul aub een woord in of klik op overslaan'
+                    })}
+                />
+
+            
 
             <Box>
-                <Link to={`/pageFour`}><Button sx={{ typography: "h3", color: "secondary.main", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue"}}>overslaan</Button></Link>
-                <LoadingButton loading={mutation.isLoading} color="secondary"
-                    loadingIndicator="Adding word" type="submit" variant="contained" sx={{typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", marginBottom: "3rem", fontFamily: "Bebas Neue" }}>Verder</LoadingButton>
+                <Stack direction="row" sx={{marginTop:"8rem"}}>
+                    <Link to={`/pageFour`}><Button sx={{ typography: "h3", color: "secondary.main", width: "20rem", padding: "1rem 0rem", fontFamily: "Bebas Neue" }}>overslaan</Button></Link>
+                    <LoadingButton loading={mutation.isLoading} color="secondary" loadingIndicator="Adding word" type="submit" variant="contained" sx={{ typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", fontFamily: "Bebas Neue" }}>Verder</LoadingButton>
+                </Stack>
+            
                 <Snackbar open={mutation.isSuccess} anchorOrigin={{ vertical: "bottom", horizontal: "right", fontFamily:'Bebas Neue'}} autoHideDuration={3000} onClose={handleCloseSnackbar}>
                     <Alert severity="success" sx={{ width: '100%' }}>
                         Woord ontvangen
