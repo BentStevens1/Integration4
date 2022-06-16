@@ -3,6 +3,7 @@ import CheckboxesGroup from '../components/SelectWords';
 import { useQuery } from "react-query";
 import { Link} from "react-router-dom";
 
+
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 function PageFour2(){

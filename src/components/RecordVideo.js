@@ -20,13 +20,13 @@ const RecordVideo = () => {
 
 
     const postVideo = async (blob) => {
-        const data = new FormData();
+        const formData = new FormData();
         console.log(blob);
-        data.append("video", blob);
-        console.log(data.get('video'))
+        formData.append("data", JSON.stringify({ }))
+        formData.append("files.video", blob, 'video.mp4');
         return await fetch(`${backendUrl}/api/videos?populate=*`, {
             method: "POST",
-            body: data,
+            body: formData,
         }).then(r => r.json());
     }
 

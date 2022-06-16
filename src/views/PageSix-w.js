@@ -1,6 +1,7 @@
 import { Typography, Button } from '@mui/material';
 import { Link } from "react-router-dom";
 
+
 function PageSix2() {
 
     return (

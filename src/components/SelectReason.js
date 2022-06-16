@@ -21,7 +21,6 @@ const CheckboxesGroup2 = () => {
 
 
     const handleChange = (event) => {
-        //  event.preventDefault();
         setState({
             ...state,
             [event.target.name]: event.target.checked,
@@ -36,26 +35,25 @@ const CheckboxesGroup2 = () => {
                 <FormGroup sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                     <FormControlLabel 
                         control={
-                            <Checkbox checked={one} onChange={handleChange} name='niet kwetsend' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 } , marginRight:"2rem"}}/>
+                            <Checkbox checked={one} onChange={handleChange} name='one' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 } , marginRight:"2rem"}}/>
                         }
                         label={<Typography sx={{ typography: "h2", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Ik vind dit niet kwetsend</Typography>}
                     />
                     <FormControlLabel sx={{ marginTop: "5rem" }}
                         control={
-                            <Checkbox checked={two} onChange={handleChange} name='wist niet' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 }, marginRight: "2rem"}} />
+                            <Checkbox checked={two} onChange={handleChange} name='two' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 }, marginRight: "2rem"}} />
                         }
                         label={<Typography sx={{ typography: "h2", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Ik wist nog niet dat dit mensen kwetst</Typography>}
                     />
                     <FormControlLabel sx={{ marginTop: "5rem" }}
                         control={
-                            <Checkbox checked={three} onChange={handleChange} name='vrienden' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 }, marginRight: "2rem"}}/>
+                            <Checkbox checked={three} onChange={handleChange} name='three' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 }, marginRight: "2rem"}}/>
                         }
                         label={<Typography sx={{ typography: "h2", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Mijn vrienden gebruiken het</Typography>}
                     />
                     <FormControlLabel sx={{ marginTop: "5rem" }}
                         control={
-                            <TextField onChange={handleChange} name='Anders' placeholder='Anders...' inputProps={{ style: { fontSize: 50, fontFamily: "Bebas Neue" } }} InputLabelProps={{ style: { fontSize: 50, fontFamily: "Bebas Neue"}}} />
-                        }
+                            <Checkbox><TextField onChange={handleChange} name='Anders' placeholder='Anders...' inputProps={{ style: { fontSize: 50, fontFamily: "Bebas Neue" } }} InputLabelProps={{ style: { fontSize: 50, fontFamily: "Bebas Neue"}}} /></Checkbox>  }
                     />
                 </FormGroup>
             </FormControl>

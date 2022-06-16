@@ -12,12 +12,12 @@ import VideoRecorder from "./views/VideoRecorder";
 import PageFour from "./views/PageFour";
 import PageFour2 from "./views/PageFour-w";
 import PageFive2 from "./views/PageFive-w";
+import PageFive from "./views/PageFive";
 import PageSix2 from "./views/PageSix-w";
 import End from "./views/End";
 
 function App() {
   return (
-    // <RecordVideo />
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index path='/' element={<Home />} />
@@ -30,6 +30,7 @@ function App() {
         <Route path="/VideoOverview/:videoId" element={<VideoDetail/>}/>
         <Route path="/PageFour" element={<PageFour/>}/>
         <Route path="/PageFour-w" element={<PageFour2/>}/>
+        <Route path="/PageFive/:ids" element={<PageFive/>}/>
         <Route path="/PageFive-w" element={<PageFive2/>}/>
         <Route path="/PageSix-w" element={<PageSix2/>}/>
         <Route path="/End" element={<End/>}/>
