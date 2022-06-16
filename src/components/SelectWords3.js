@@ -13,7 +13,7 @@ import useStore from '../store/Store';
 
 const CheckboxesGroup = ({ words }) => {
 
-  const selectedWs = useStore((state) => state.selectedWs)
+  const selectedWords = useStore((state) => state.selectedWs)
   const AddSelected = useStore((state) => state.AddSelectedWords)
   const RemoveSelected = useStore((state) => state.RemoveWord)
 
@@ -31,17 +31,17 @@ const CheckboxesGroup = ({ words }) => {
     if (e.currentTarget.checked) {
       AddSelected(word);
     } else {
-      const index = selectedWs.findIndex(o => o.id === word.id)
+      const index = selectedWords.findIndex(o => o.id === word.id)
       console.log(index);
       if (index > -1) {
-        const newWords = [...selectedWs];
+        const newWords = [...selectedWords];
         newWords.splice(index, 1);
         RemoveSelected(newWords);
       }
     }
   }
 
-  console.log(selectedWs);
+  console.log(selectedWords);
   // const onCheckboxChange = (e, word) => {
   //   if (e.currentTarget.checked) {
   //     setSelectedWords([...selectedWords, word])
@@ -56,6 +56,7 @@ const CheckboxesGroup = ({ words }) => {
   // }
 
   const onSubmit = () => {
+
   };
 
   return (
@@ -65,7 +66,7 @@ const CheckboxesGroup = ({ words }) => {
           {
             words.map(word => <FormControlLabel key={word.id}
               control={
-                <Checkbox value={word.attributes.content} onChange={e => onCheckboxChange(e, word)} checked={selectedWs.find(o => o.id === word.id) !== undefined} />
+                <Checkbox value={word.attributes.content} onChange={e => onCheckboxChange(e, word)} checked={selectedWords.find(o => o.id === word.id) !== undefined} />
               }
               label={word.attributes.content}
             />)
@@ -84,7 +85,7 @@ const CheckboxesGroup = ({ words }) => {
       </FormControl>
       <Box>
         <Link to={`/VideoOverview`}><Button sx={{ marginTop: "3rem", width: "14rem", color: 'text.primary', fontFamily: "Bebas Neue" }}>dit kwetst mij niet</Button></Link>
-        <Link to={`/PageFive/`}><Button variant="contained" color="secondary" sx={{ marginTop: "3rem", width: '14rem', padding: '.5rem', fontFamily: 'Bebas Neue' }}>Verder</Button></Link>
+        <Link to={`/PageFive`}><Button variant="contained" color="secondary" sx={{ marginTop: "3rem", width: '14rem', padding: '.5rem', fontFamily: 'Bebas Neue' }}>Verder</Button></Link>
       </Box>
     </Box>
   );

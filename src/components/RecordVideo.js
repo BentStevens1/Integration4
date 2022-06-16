@@ -4,6 +4,7 @@ import { Stack} from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from 'react-query';
+import useStore from '../store/Store';
 
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
@@ -11,6 +12,8 @@ const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const RecordVideo = () => {
 
+    const radio = useStore((state) => state.radio);
+    console.log(radio);
     const [url, setUrl] = useState("");
     const [videoBlob, setVideoBlob] = useState(null);
  
@@ -21,8 +24,9 @@ const RecordVideo = () => {
     const postVideo = async (blob) => {
         const formData = new FormData();
         console.log(blob);
-        formData.append("data", JSON.stringify({ }))
-        formData.append("files.video", blob, 'video.mp4');
+        formData.append("data", JSON.stringify({ word: radio }))
+        // formData.append("data", JSON.stringify({}))
+        formData.append("files.video", blob, 'video.mp4')
         return await fetch(`${backendUrl}/api/videos?populate=*`, {
             method: "POST",
             body: formData
@@ -81,6 +85,7 @@ const RecordVideo = () => {
                     // postVideo(videoBlob);
                     setVideoBlob(videoBlob);
                 }}
+              
                 
             /> 
  
