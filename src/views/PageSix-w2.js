@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Typography, Button, Box, Stack, SwipeableDrawer } from '@mui/material';
 import { Link } from "react-router-dom";
-// import InfoIcon from '@mui/icons-material/Info';
+import InfoIcon from '@mui/icons-material/Info';
 
 function PageSixW2() {
 
@@ -17,10 +17,10 @@ function PageSixW2() {
         <>
             <Box sx={{ height: '100vh', width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between' }}> 
                 <Typography className="title-w" color="black" sx={{ typography: "h1", marginTop: "4rem", textTransform: "uppercase", fontFamily: "Bebas Neue", width: "80%", textAlign: "center" }}>Wist je dat</Typography>
-                <Typography color="secondary" sx={{ typography: "h3", textTransform: "uppercase", marginTop: "-15rem", fontFamily: "Bebas Neue", width: "80%", textAlign: "center" }}>Dit kan je beter zeggen dan blank</Typography>
+                <Typography color="secondary" sx={{ typography: "h3", textTransform: "uppercase", marginTop: "-15rem", fontFamily: "Bebas Neue", width: "80%", textAlign: "center" }}>je dit beter kan zeggen in plaats van blank</Typography>
                 <Typography sx={{ fontSize: '15rem', marginTop: "-20rem",  textTransform: "uppercase", fontFamily: "Bebas Neue", width: "80%", textAlign: "center" }}>"Wit"</Typography>
                 <Stack direction="row" sx={{ marginBottom: "5rem" }}>
-                    <Button onClick={toggleDrawer} sx={{ typography: "h3", color: "secondary.main", width: "20rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Over Blank</Button>
+                    <InfoIcon sx={{ typography: "h3", color: "primary.main", marginRight:"-3rem", marginTop:"1rem" }}/><Button onClick={toggleDrawer} sx={{ typography: "h3", color: "secondary.main", width: "20rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Over Blank</Button>
                     <SwipeableDrawer
                         anchor="bottom"
                         open={open}

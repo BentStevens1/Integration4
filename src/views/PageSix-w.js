@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Typography, Button, Box, Stack, SwipeableDrawer } from '@mui/material';
 import { Link } from "react-router-dom";
+import InfoIcon from '@mui/icons-material/Info';
 
 function PageSix2() {
 
@@ -19,7 +20,7 @@ function PageSix2() {
                 <Typography color="secondary" sx={{ typography: "h3", textTransform: "uppercase", marginTop: "-15rem", fontFamily: "Bebas Neue", width: "80%", textAlign: "center" }}>Dit kan je beter zeggen dan blank</Typography>
                 <Typography sx={{ fontSize: '15rem', marginTop: "-20rem",  textTransform: "uppercase", fontFamily: "Bebas Neue", width: "80%", textAlign: "center" }}>"Wit"</Typography>
                 <Stack direction="row" sx={{ marginBottom: "5rem" }}>
-                    <Button onClick={toggleDrawer} sx={{ typography: "h3", color: "secondary.main", width: "20rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Over Blank</Button>
+                    <InfoIcon sx={{ typography: "h3", color: "primary.main", marginRight: "-3rem", marginTop: "1rem" }} /><Button onClick={toggleDrawer} sx={{ typography: "h3", color: "secondary.main", width: "20rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Over Blank</Button>
                     <SwipeableDrawer
                         anchor="bottom"
                         open={open}
