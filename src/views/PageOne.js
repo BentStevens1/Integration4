@@ -22,7 +22,7 @@ function PageOne(){
                 <Typography fontFamily={"Bebas Neue"} variant={'h3'} color="text" sx={{margin: '3rem', textAlign: 'center'}}>Ben jij al eens gekwetst geraakt door woorden zoals die in de video?</Typography>
                 <Box>
                      <Link to={`/pageTwo`}><Button variant="contained" color="secondary" sx={{typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", marginBottom: "3rem", fontFamily: "Bebas Neue" }} >Ja</Button></Link>
-                     <Link to={`/pageTwo-w`}><Button variant="contained" color="secondary" sx={{typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", marginBottom: "3rem", fontFamily: "Bebas Neue" }}>Nee</Button></Link>
+                     <Link to={`/pageTwo-w`}><Button variant="contained" color="secondary" sx={{typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginBottom: "3rem", fontFamily: "Bebas Neue" }}>Nee</Button></Link>
                 </Box>
                 </Box>
         </>
