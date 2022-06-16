@@ -26,7 +26,9 @@ const RecordVideo = () => {
         formData.append("files.video", blob, 'video.mp4');
         return await fetch(`${backendUrl}/api/videos?populate=*`, {
             method: "POST",
-            body: formData,
+            body: {
+                data: data
+            }
         }).then(r => r.json());
     }
 
@@ -77,7 +79,7 @@ const RecordVideo = () => {
                 
                 onRecordingComplete={(videoBlob) => {
                     // Do something with the video...
-                    console.log('videoBlob', videoBlob.type);
+                    console.log('videoBlob', videoBlob);
                     // uploadVideo(videoBlob);
                     // postVideo(videoBlob);
                     setVideoBlob(videoBlob);
