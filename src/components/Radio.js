@@ -7,7 +7,7 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import { useForm } from "react-hook-form";
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { Link } from "react-router-dom";
 import useStore from '../store/Store';
 
@@ -57,11 +57,16 @@ const RadioBoxes = ({ words }) => {
           name="radio-buttons-group"
         >
           {
-            words.map(word => <FormControlLabel key={word.id} value={word.attributes.content}
+            words.map(word => <FormControlLabel className="select" key={word.id} value={word.attributes.content}
               control={
-                <Radio onChange={e => onRadioChange(e, word)} />
+                <Radio sx={{
+                  color: "black",
+                  '&.Mui-checked': {
+                    color: "black",
+                  },
+                }} onChange={e => onRadioChange(e, word)} />
               }
-              label={word.attributes.content}
+              label={<Typography sx={{ color: "black", typography: "h4", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>{word.attributes.content}</Typography>}
             />)
           }
         </RadioGroup>

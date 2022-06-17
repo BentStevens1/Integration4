@@ -6,7 +6,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { useForm } from "react-hook-form";
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { Link } from "react-router-dom";
 import useStore from '../store/Store';
 
@@ -60,32 +60,24 @@ const CheckboxesGroup = ({ words }) => {
   };
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: "column" }}>
+    <Box sx={{ display: 'flex', flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
       <FormControl sx={{ m: 6 }} component="fieldset" variant="standard" onSubmit={handleSubmit(onSubmit)}>
-        <FormGroup>
+        <FormGroup sx={{ display: "grid", gridTemplateColumns: " 1fr 1fr 1fr", gap: "1rem"}} >
           {
-            words.map(word => <FormControlLabel key={word.id}
+            words.map(word => <FormControlLabel className="select" key={word.id}
               control={
-                <Checkbox value={word.attributes.content} onChange={e => onCheckboxChange(e, word)} checked={selectedWords.find(o => o.id === word.id) !== undefined} />
+                <Checkbox color="secondary" sx={{ textColor: "text.primary" }} value={word.attributes.content} onChange={e => onCheckboxChange(e, word)} checked={selectedWords.find(o => o.id === word.id) !== undefined} />
               }
-              label={word.attributes.content}
+              label={
+                <Typography sx={{ color: "black", typography: "h4", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>{word.attributes.content}</Typography>
+              }
             />)
           }
-
-{/* {
-            words.map(word => <FormControlLabel key={word.id}
-              control={
-                <Checkbox value={word.attributes.content} onChange={e => onCheckboxChange(e, word)} checked={selectedWords.find(o => o.id === word.id) !== undefined} />
-              }
-              label={word.attributes.content}
-            />)
-          } */}
-
         </FormGroup>
       </FormControl>
-      <Box>
-        <Link to={`/VideoOverview`}><Button sx={{ marginTop: "3rem", width: "14rem", color: 'text.primary', fontFamily: "Bebas Neue" }}>dit kwetst mij niet</Button></Link>
-        <Link to={`/PageFive`}><Button variant="contained" color="secondary" sx={{ marginTop: "3rem", width: '14rem', padding: '.5rem', fontFamily: 'Bebas Neue' }}>Verder</Button></Link>
+      <Box sx={{marginTop:"10rem"}}>
+        <Link to={`/VideoOverview`}><Button sx={{ typography: "h3", color: "secondary.main", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>dit kwetst mij niet</Button></Link>
+        <Link to={`/PageFive`}><Button variant="contained" color="secondary" sx={{ typography: "h3", bgcolor: "secondary.main", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Verder</Button></Link>
       </Box>
     </Box>
   );

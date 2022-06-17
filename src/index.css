@@ -92,15 +92,21 @@ code {
   z-index: 1;
 }
 
+.select {
+  padding: 3rem 2rem 3rem 4rem;
+  background-image: url('img/select.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
 .button__Button-hkteey-0 {
   margin-bottom: 5rem;
   padding: 5rem;
-
 }
 
 .jLcHAe {
   margin-bottom: 5rem;
   padding: 5rem;
   color: aqua;
-
 }

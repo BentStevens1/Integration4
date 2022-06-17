@@ -16,7 +16,6 @@ const CheckboxesGroup2 = () => {
         one: true,
         two: false,
         three: false,
-        four: false,
     });
 
 
@@ -27,7 +26,7 @@ const CheckboxesGroup2 = () => {
         });
     };
 
-    const { one, two, three, four } = state;
+    const { one, two, three } = state;
 
     return (
         <Box sx={{ display: 'flex' }}>
