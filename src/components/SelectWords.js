@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { useForm } from "react-hook-form";
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { Link } from "react-router-dom";
 import useStore from '../store/Store';
 import Radio from '@mui/material/Radio';
@@ -39,21 +39,26 @@ const CheckboxesGroup = ({ words }) => {
           aria-labelledby="radio-buttons-group-label"
           defaultValue="female"
           name="radio-buttons-group"
+          sx={{ display: "grid", gridTemplateColumns: " 1fr 1fr 1fr", gap: "1rem"}}
         >
           {
-            words.map(word => <FormControlLabel key={word.id} value={word.attributes.content}
+            words.map(word => <FormControlLabel className='select' key={word.id} value={word.attributes.content}
               control={
-                <Radio onChange={e => onRadioChange(e, word)} />
+                <Radio sx={{
+                  color: "black",
+                  '&.Mui-checked': {
+                    color: "black",
+                  },}} onChange={e => onRadioChange(e, word)} />
               }
-              label={word.attributes.content}
+              label={<Typography sx={{ color: "black", typography: "h4", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>{word.attributes.content}</Typography>}
             />)
           }
         </RadioGroup>
       </FormControl>
 
-      <Box>
-        <Link to={`/VideoOverview`}><Button sx={{ marginTop: "3rem", width: "14rem", color: 'text.primary', fontFamily: "Bebas Neue" }}>dit kwetst mij niet</Button></Link>
-        <Link to={`/PageThree-w`}><Button variant="contained" color="secondary" sx={{ marginTop: "3rem", width: '14rem', padding: '.5rem', fontFamily: 'Bebas Neue' }}>Verder</Button></Link>
+      <Box sx={{marginTop: "15rem"}}>
+        <Link to={`/VideoOverview`}><Button sx={{ typography: "h3", color: "secondary.main", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>dit kwetst mij niet</Button></Link>
+        <Link to={`/PageThree-w`}><Button variant="contained" color="secondary" sx={{ typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Verder</Button></Link>
       </Box>
     </Box>
   );

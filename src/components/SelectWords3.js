@@ -75,9 +75,9 @@ const CheckboxesGroup = ({ words }) => {
           }
         </FormGroup>
       </FormControl>
-      <Box sx={{marginTop:"10rem"}}>
+      <Box sx={{marginTop:"15rem"}}>
         <Link to={`/VideoOverview`}><Button sx={{ typography: "h3", color: "secondary.main", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>dit kwetst mij niet</Button></Link>
-        <Link to={`/PageFive`}><Button variant="contained" color="secondary" sx={{ typography: "h3", bgcolor: "secondary.main", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Verder</Button></Link>
+        <Link to={`/PageFive`}><Button variant="contained" color="secondary" sx={{ typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Verder</Button></Link>
       </Box>
     </Box>
   );
