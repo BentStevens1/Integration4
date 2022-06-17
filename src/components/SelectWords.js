@@ -2,128 +2,58 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
-import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import { useForm } from "react-hook-form";
 import { Button } from '@mui/material';
 import { Link } from "react-router-dom";
+import useStore from '../store/Store';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
 
 
 const CheckboxesGroup = ({ words }) => {
-  console.log(words);
 
-  const [arrayWords, setWords] = useState([1, 2, 3, 4, 5]);
-  const length = words.data.length;
+  const checkRadio = useStore((state) => state.CheckRadio);
 
-  const { handleSubmit } = useForm({
+  const { handleSubmit, formState: { errors }, register, control, reset, watch } = useForm({
     defaultValues: {
       checkbox: false,
     }
   });
 
-  const getRandomInt = (max) => {
-    return Math.floor(Math.random() * max);
-  }
-  const [state, setState] = React.useState([]);
-
-  const fillArray = () => {
-    var value = [];
-    var n = 5;
-    for (var i = 0; i < n; i++) {
-      while (value.length < 5) {
-        var number = getRandomInt(length);
-        var random = words.data[number].id;
-        if (value.includes(number) == false && random !== words.data[length - 1].id) {
-          value.push(number);
-        }
-      }
+  const onRadioChange = (e, word) => {
+    if (e.currentTarget.checked) {
+      checkRadio(word);
     }
-    return value;
-  };
 
-  useEffect(() => {
-    const data = fillArray();
-    setWords([data]);
-  }, []);
-
-  const word1 = arrayWords[0][0];
-  const id1 = words.data[word1].attributes.content;
-  const word2 = arrayWords[0][1];
-  const id2 = words.data[word2].attributes.content;
-  const word3 = arrayWords[0][2];
-  const id3 = words.data[word3].attributes.content;
-  const word4 = arrayWords[0][3];
-  const id4 = words.data[word4].attributes.content;
-  const word5 = arrayWords[0][4];
-  const id5 = words.data[word5].attributes.content;
-  const word6 = words.data[length - 1].id;
-  const id6 = words.data[length - 1].attributes.content;
-
-  const handleChange = (event) => {
-    const index = state.indexOf(event.target.value);
-    if (index === -1) {
-      setState([...state, event.target.value])
-    } else {
-      setState(state.filter((s) => s !== event.target.value))
-    };
-  };
-
-  console.log(state);
-  console.log(state.join('+'));
+  }
 
   const onSubmit = () => {
-    console.log(`selected: ${state}`);
+    // console.log(`selected: ${state}`);
   };
 
-  const { one, two, three, four, five, six } = state;
-
   return (
-    <Box sx={{ display: 'flex' , flexDirection: "column" }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between' }}>
       <FormControl sx={{ m: 6 }} component="fieldset" variant="standard" onSubmit={handleSubmit(onSubmit)}>
-        <FormGroup>
-          <FormControlLabel
-            control={
-              <Checkbox checked={one} onChange={handleChange} name="one" value={word1} />
-            }
-            label={id1}
-          />
-          <FormControlLabel
-            control={
-              <Checkbox checked={two} onChange={handleChange} name="two" value={word2} r />
-            }
-            label={id2}
-          />
-          <FormControlLabel
-            control={
-              <Checkbox checked={three} onChange={handleChange} name="three" value={word3} />
-            }
-            label={id3}
-          />
-          <FormControlLabel
-            control={
-              <Checkbox checked={four} onChange={handleChange} name="four" value={word4} />
-            }
-            label={id4}
-          />
-          <FormControlLabel
-            control={
-              <Checkbox checked={five} onChange={handleChange} name="five" value={word5} />
-            }
-            label={id5}
-          />
-          <FormControlLabel
-            control={
-              <Checkbox checked={six} onChange={handleChange} name="six" value={word6} />
-            }
-            label={id6}
-          />
-        </FormGroup>
+        <RadioGroup
+          aria-labelledby="radio-buttons-group-label"
+          defaultValue="female"
+          name="radio-buttons-group"
+        >
+          {
+            words.map(word => <FormControlLabel key={word.id} value={word.attributes.content}
+              control={
+                <Radio onChange={e => onRadioChange(e, word)} />
+              }
+              label={word.attributes.content}
+            />)
+          }
+        </RadioGroup>
       </FormControl>
 
       <Box>
         <Link to={`/VideoOverview`}><Button sx={{ marginTop: "3rem", width: "14rem", color: 'text.primary', fontFamily: "Bebas Neue" }}>dit kwetst mij niet</Button></Link>
-        <Link to={`/PageFive/${state.join('+')}`}><Button variant="contained" color="secondary" sx={{ marginTop: "3rem", width: '14rem', padding: '.5rem', fontFamily: 'Bebas Neue' }}>Verder</Button></Link>
+        <Link to={`/PageThree-w`}><Button variant="contained" color="secondary" sx={{ marginTop: "3rem", width: '14rem', padding: '.5rem', fontFamily: 'Bebas Neue' }}>Verder</Button></Link>
       </Box>
     </Box>
   );
