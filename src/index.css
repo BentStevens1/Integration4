@@ -26,9 +26,6 @@ code {
   margin-left: 2rem ;
 }
 
-.record {
-  height: 100vh;
-}
 
 .input {
   padding: 2rem;
@@ -93,4 +90,17 @@ code {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   z-index: 1;
+}
+
+.button__Button-hkteey-0 {
+  margin-bottom: 5rem;
+  padding: 5rem;
+
+}
+
+.jLcHAe {
+  margin-bottom: 5rem;
+  padding: 5rem;
+  color: aqua;
+
 }

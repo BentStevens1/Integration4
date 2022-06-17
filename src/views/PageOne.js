@@ -24,7 +24,7 @@ function PageOne(){
                      <Link to={`/pageTwo`}><Button variant="contained" color="secondary" sx={{typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", marginBottom: "3rem", fontFamily: "Bebas Neue" }} >Ja</Button></Link>
                      <Link to={`/pageTwo-w`}><Button variant="contained" color="secondary" sx={{typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginBottom: "3rem", fontFamily: "Bebas Neue" }}>Nee</Button></Link>
                 </Box>
-                </Box>
+            </Box>
         </>
     )
 }
