@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import VideoRecorder from 'react-video-recorder';
-import { Stack} from '@mui/material';
+import { Stack, Box, Button } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from 'react-query';
+import { Link } from "react-router-dom";
 import useStore from '../store/Store';
 
 
@@ -11,14 +12,13 @@ const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 
 const RecordVideo = () => {
-
+    
     const radio = useStore((state) => state.radio);
     console.log(radio);
-    const [url, setUrl] = useState("");
     const [videoBlob, setVideoBlob] = useState(null);
- 
     const { handleSubmit, reset,  } = useForm();
     const queryClient = useQueryClient()
+    
 
 
     const postVideo = async (blob) => {
@@ -45,26 +45,9 @@ const RecordVideo = () => {
         mutation.mutate(videoBlob)
     }
 
-    // const uploadVideo = (blob) => {
-    //     const data = new FormData();
-    //     data.append("file", blob);
-    //     data.append("upload_preset", "upload");
-    //     data.append("cloud_name", "dt6nw5zid");
-    //     fetch(" https://api.cloudinary.com/v1_1/dt6nw5zid/video/upload", {
-    //         method: "post",
-    //         body: data
-    //     })
-    //     .then(resp => resp.json())
-    //     .then(data => {
-    //         setUrl(data.url)
-    //     })
-    //     .catch(err => console.log(err));
-    //     console.log(url)
-    // }
-
-
     return (
-        <div className="record">       
+        <div className="record">   
+        <Box sx={{ position: 'fixed', zIndex: "0", height:"100vh", width:"100vw"}} >
             <VideoRecorder
                 chunkSize={(250)}
                 constraints={{
@@ -84,15 +67,20 @@ const RecordVideo = () => {
                     // uploadVideo(videoBlob);
                     // postVideo(videoBlob);
                     setVideoBlob(videoBlob);
+
                 }}
               
                 
             /> 
- 
-            <Stack spacing={4} sx={{ flex: 1 }} as="form" noValidate onSubmit={handleSubmit(test)}>
+        
+        </Box>    
+       
+            <Stack spacing={4} direction="row" sx={{ position: 'absolute', zIndex: "3", overflowX: 'hidden', bottom:"0", marginBottom:"5rem", marginLeft:"10rem"}} as="form" noValidate onSubmit={handleSubmit(test)}>
                 <LoadingButton color="secondary"
-                    loadingIndicator="Adding video" type="submit" variant="contained">Upload</LoadingButton>
+                    loadingIndicator="Adding video" type="submit" variant="contained" sx={{ color: "black", typography: "h4", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Upload</LoadingButton>
+                    <Link to={`/VideoOverview`}><Button sx={{ color: "black", typography: "h4", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Toch geen video opnemen</Button></Link>
             </Stack>
+    
 
 
         </div>
