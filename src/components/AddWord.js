@@ -44,7 +44,7 @@ const AddWord = () => {
 
     const onSubmit = data => {
         mutation.mutate(data);
-        navigate('/pageThree');
+        navigate('/pageFour');
     }
 
     const handleCloseSnackbar = () => {

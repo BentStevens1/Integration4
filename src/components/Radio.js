@@ -9,9 +9,15 @@ import { useForm } from "react-hook-form";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { Button } from '@mui/material';
 import { Link } from "react-router-dom";
+import useStore from '../store/Store';
 
 
 const RadioBoxes = ({ words }) => {
+
+  const radio = useStore((state) => state.radio);
+  const AddSelected = useStore((state) => state.AddSelectedWords);
+  const RemoveSelected = useStore((state) => state.RemoveWord);
+  const checkRadio = useStore((state) => state.CheckRadio);
 
   const { handleSubmit, formState: { errors }, register, control, reset, watch } = useForm({
     defaultValues: {
@@ -19,48 +25,51 @@ const RadioBoxes = ({ words }) => {
     }
   });
 
-  const [state, setState] = React.useState([]);
-
   console.log(words);
 
 
-  const handleChange = (event) => {
-    const index = state.indexOf(event.target.value);
-    if (index === -1) {
-      setState([...state, event.target.value])
-    } else {
-      setState(state.filter((s) => s !== event.target.value))
-    };
-  };
+  // const handleChange = (event) => {
+  //   const index = state.indexOf(event.target.value);
+  //   if (index === -1) {
+  //     setState([...state, event.target.value])
+  //   } else {
+  //     setState(state.filter((s) => s !== event.target.value))
+  //   };
+  // };
 
-  console.log(state);
+  const onRadioChange = (e, word) => {
+    if (e.currentTarget.checked) {
+      checkRadio(word);
+    }
+
+  }
 
   const onSubmit = () => {
-    console.log(`selected: ${state}`);
+    // console.log(`selected: ${state}`);
   };
 
-  const { one } = state;
-
-
-  const id = state;
-
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between' }}>
       <FormControl sx={{ m: 6 }} component="fieldset" variant="standard" onSubmit={handleSubmit(onSubmit)}>
         <RadioGroup
           aria-labelledby="radio-buttons-group-label"
           defaultValue="female"
           name="radio-buttons-group"
         >
-          {words.data.forEach(word =>
-            <FormControlLabel value={{ word }} control={<Radio />} label={{ word }} />
-          )}
+          {
+            words.map(word => <FormControlLabel key={word.id} value={word.attributes.content}
+              control={
+                <Radio onChange={e => onRadioChange(e, word)} />
+              }
+              label={word.attributes.content}
+            />)
+          }
         </RadioGroup>
       </FormControl>
 
       <Box>
-        <Link to={`/VideoOverview`}><Button sx={{ marginTop: "3rem", width: "14rem", color: 'text.primary', fontFamily: "Bebas Neue" }}>dit kwetst mij niet</Button></Link>
-        <Link to={`/PageFive/${id}`}><Button variant="contained" color="secondary" sx={{ typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Verder</Button></Link>
+        <Link to={`/VideoOverview`}><Button sx={{ typography: "h3", color: "secondary.main", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>dit kwetst mij niet</Button></Link>
+        <Link to={`/VideoRecorder`}><Button variant="contained" color="secondary" sx={{ typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Verder</Button></Link>
       </Box>
     </Box>
   );
