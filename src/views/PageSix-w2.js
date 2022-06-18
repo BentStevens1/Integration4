@@ -22,7 +22,7 @@ function PageSixW2() {
             <Box sx={{ height: '100vh', width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between' }}>
                 <Typography className="title-w" color="black" sx={{ typography: "h1", marginTop: "4rem", textTransform: "uppercase", fontFamily: "Bebas Neue", width: "80%", textAlign: "center" }}>Wist je dat</Typography>
                 <Typography color="secondary" sx={{ typography: "h3", textTransform: "uppercase", marginTop: "-5rem", fontFamily: "Bebas Neue", width: "80%", textAlign: "center" }}>je dit beter kan zeggen in plaats van {radio.attributes.content}</Typography>
-                <Typography sx={{ fontSize: '15rem', marginTop: "-5rem", textTransform: "uppercase", fontFamily: "Bebas Neue", width: "80%", textAlign: "center" }}>"{radio.attributes.alternative}"</Typography>
+                <Typography sx={{ fontSize: '5rem', marginTop: "-5rem", textTransform: "uppercase", fontFamily: "Bebas Neue", width: "90%", textAlign: "center", lineHeight: "1" }}>"{radio.attributes.alternative}"</Typography>
                 <Stack direction="row" sx={{ marginBottom: "5rem" }}>
                     <InfoIcon sx={{ typography: "h3", color: "primary.main", marginTop: "1rem" }} /><Button onClick={toggleDrawer} sx={{ typography: "h3", color: "secondary.main", width: "20rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Over {radio.attributes.content}</Button>
                     <SwipeableDrawer

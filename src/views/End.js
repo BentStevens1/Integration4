@@ -15,8 +15,8 @@ function End() {
     return (
         <Box sx={{ height: '100vh', width: '100vw', padding: "3rem" }}>
             <Box className="title2" sx={{ display: "flex", flexDirection: "row", gap: "1rem", alignItems: "center", justifyContent:"space-evenly", color: "text.secondary" }}>
-                <Typography fontSize={"13rem"} fontFamily="Bebas Neue" >Bedankt</Typography>
-                <Typography fontSize={"3rem"} fontFamily="Bebas Neue" >voor jouw medewerking</Typography>
+                <Typography fontSize={"9rem"} fontFamily="Bebas Neue" sx={{marginRight:"1.2rem"}} >Bedankt</Typography>
+                <Typography fontSize={"3rem"} fontFamily="Bebas Neue" sx={{lineHeight:"1.2"}} >voor jouw medewerking</Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: "2rem", flexDirection: "column" }}>
                 <Typography fontFamily="Bebas Neue" variant="h2" margin={"3rem"} textAlign={"center"}>Volg ons op sociale media</Typography>
