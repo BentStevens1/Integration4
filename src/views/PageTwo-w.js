@@ -26,11 +26,6 @@ function PageTwo2() {
         })
     }
 
-
-
-
-
-    console.log(words);
     var style = {
         width: '40vh',
         height: '10vh',
@@ -49,10 +44,6 @@ function PageTwo2() {
             <Box sx={{ height: '100vh', width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around' }}>
                 <Typography fontFamily={"bebas Neue"} variant='h3' color="secondary" sx={{ textAlign: 'center' }} >Selecteer de term die het meest wordt gebruikt in jouw omgeving:</Typography>
                 {words && (<>
-
-                    {
-                        console.log(wordsWithVideo)
-                    }
                     <CheckboxesGroup words={wordsWithVideo} />
                 </>)}
             </Box>
