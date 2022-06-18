@@ -35,7 +35,7 @@ const VideoCard2 = (word) => {
                         url={video.attributes.video.data.attributes.url}
                         width='100vw'
                         height='100vh'
-                        // controls={true}
+                        controls={true}
                         playing={true}
                         sx={{ zIndex: " 1", position: "absolute" }}
                         onEnded={navigateBack}
