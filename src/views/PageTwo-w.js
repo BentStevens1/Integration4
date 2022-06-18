@@ -13,7 +13,7 @@ function PageTwo2() {
     const { isLoading, data: words } = useQuery("words", async () => {
         const data = await fetch(`${backendUrl}/api/words?populate=*`).then(r => r.json());
         const words = data.data;
-        // words.sort((a, b) => Math.random() > 0.5 ? -1 : 1);
+        words.sort((a, b) => Math.random() > 0.5 ? -1 : 1);
         // return words.slice(0, 6);
          return words;
     });
