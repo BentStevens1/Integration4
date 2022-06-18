@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif, 'Bebas Neue', 'Open Sans';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +12,110 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.App {
+  min-height: 100vh;
+  background-color: #1C1C1C;
+}
+
+.camera {
+  position: relative;
+  transform: scaleX(-1);
+  margin-left: 2rem ;
+}
+
+
+.input {
+  padding: 2rem;
+  background-image: url('img/Vector.png');
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  z-index: 1;
+}
+
+.input2 {
+  padding: 2rem 7rem;
+  background-image: url('img/Vector.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+.title {
+  padding: 2rem;
+  background-image: url('img/Vector.png');
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  z-index: 1;
+}
+
+
+.title2 {
+  padding: 2rem 5rem;
+  background-image: url('img/Vector2.png');
+  background-repeat: no-repeat;
+  background-position-y: 30px;
+  background-size: 100% 80%;
+}
+
+.reason1 {
+  padding: 2rem 3rem;
+  background-image: url('img/option1.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+.reason2 {
+  padding: 2rem 1rem;
+  background-image: url('img/option2.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+.reason3 {
+  padding: 1rem 3rem;
+  background-image: url('img/option3.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+.title-w {
+  padding: 2rem 2rem;
+  background-image: url('img/title-w.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+.select {
+  padding: 3rem 2rem 3rem 4rem;
+  background-image: url('img/select.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+.qr {
+  padding: 10rem;
+  background-image: url('img/qr.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: #000 solid 2rem;
+  z-index: 1;
+}
+
+.button__Button-hkteey-0 {
+  margin-bottom: 5rem;
+  padding: 5rem;
+}
+
+.jLcHAe {
+  margin-bottom: 5rem;
+  padding: 5rem;
+  color: aqua;
 }
