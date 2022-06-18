@@ -4,12 +4,13 @@ import { Typography, Button, Box, Stack, SwipeableDrawer } from '@mui/material';
 import { Link } from "react-router-dom";
 import InfoIcon from '@mui/icons-material/Info';
 import useStore from '../store/Store';
+import { useNavigate } from "react-router-dom";
 
 
 function PageSix2() {
+    const navigate = useNavigate();
 
     const radio = useStore((state) => state.radio);
-    console.log(radio);
 
     const [open, setOpen] = useState(false);
 
@@ -17,13 +18,16 @@ function PageSix2() {
         setOpen(true);
     }
 
+    const navigateTo = () => {
+        navigate('/VideoOverview');
+    }
 
     return (
         <>
             <Box sx={{ height: '100vh', width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between' }}>
                 <Typography className="title-w" color="black" sx={{ typography: "h1", marginTop: "4rem", textTransform: "uppercase", fontFamily: "Bebas Neue", width: "100%", textAlign: "center" }}>Dat is menselijk, maar</Typography>
                 <Typography color="secondary" sx={{ typography: "h3", textTransform: "uppercase", marginTop: "-5rem", fontFamily: "Bebas Neue", width: "80%", textAlign: "center" }}>Dit kan je beter zeggen dan {radio.attributes.content}</Typography>
-                <Typography sx={{ fontSize: '5rem', marginTop: "-5rem", textTransform: "uppercase", fontFamily: "Bebas Neue", width: "90%", textAlign: "center", lineHeight:"1" }}>"{radio.attributes.alternative}"</Typography>
+                <Typography sx={{ fontSize: '5rem', marginTop: "-5rem", textTransform: "uppercase", fontFamily: "Bebas Neue", width: "90%", textAlign: "center", lineHeight: "1" }}>"{radio.attributes.alternative}"</Typography>
                 <Stack direction="row" sx={{ marginBottom: "5rem" }}>
                     <InfoIcon sx={{ typography: "h3", color: "primary.main", marginTop: "1rem" }} /><Button onClick={toggleDrawer} sx={{ typography: "h3", color: "secondary.main", width: "20rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Over {radio.attributes.content}</Button>
                     <SwipeableDrawer
@@ -39,7 +43,7 @@ function PageSix2() {
                         </Stack>
                     </SwipeableDrawer>
 
-                    <Link to={`/videoOverview`}><Button sx={{ typography: "h3", bgcolor: "secondary.main", color: "black", width: "20rem", padding: "1rem 0rem", fontFamily: "Bebas Neue" }}>verder</Button></Link>
+                    <Button onClick={navigateTo} sx={{ typography: "h3", bgcolor: "secondary.main", color: "black", width: "20rem", padding: "1rem 0rem", fontFamily: "Bebas Neue" }}>verder</Button>
 
 
                 </Stack>

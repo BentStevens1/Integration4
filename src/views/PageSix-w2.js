@@ -4,8 +4,11 @@ import { Typography, Button, Box, Stack, SwipeableDrawer } from '@mui/material';
 import { Link } from "react-router-dom";
 import InfoIcon from '@mui/icons-material/Info';
 import useStore from '../store/Store';
+import { useNavigate } from "react-router-dom";
 
 function PageSixW2() {
+
+    const navigate = useNavigate();
 
     const radio = useStore((state) => state.radio);
     console.log(radio);
@@ -15,6 +18,10 @@ function PageSixW2() {
     const toggleDrawer = () => {
         setOpen(true);
     }
+
+    const navigateTo = () => {
+        navigate('/VideoOverview');
+    } 
 
 
     return (
@@ -39,7 +46,7 @@ function PageSixW2() {
                     </SwipeableDrawer>
 
 
-                    <Link to={`/videoOverview`}><Button sx={{ typography: "h3", bgcolor: "secondary.main", color: "black", width: "20rem", padding: "1rem 0rem", fontFamily: "Bebas Neue" }}>verder</Button></Link>
+                    <Button onClick={navigateTo} sx={{ typography: "h3", bgcolor: "secondary.main", color: "black", width: "20rem", padding: "1rem 0rem", fontFamily: "Bebas Neue" }}>verder</Button>
 
 
                 </Stack>
