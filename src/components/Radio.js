@@ -55,6 +55,7 @@ const RadioBoxes = ({ words }) => {
           aria-labelledby="radio-buttons-group-label"
           defaultValue="female"
           name="radio-buttons-group"
+          sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}
         >
           {
             words.map(word => <FormControlLabel className="select" key={word.id} value={word.attributes.content}
