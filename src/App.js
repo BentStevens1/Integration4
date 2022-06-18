@@ -32,7 +32,7 @@ function App() {
         <Route path="/VideoOverview/:videoId" element={<VideoDetail/>}/>
         <Route path="/PageFour" element={<PageFour/>}/>
         <Route path="/PageFour-w" element={<PageFour2/>}/>
-        <Route path="/PageFive/:ids" element={<PageFive/>}/>
+        <Route path="/PageFive/" element={<PageFive/>}/>
         <Route path="/PageFive-w" element={<PageFive2/>}/>
         <Route path="/PageSix-w" element={<PageSix2/>}/>
         <Route path="/PageSix-w2" element={<PageSixW2 />} />
