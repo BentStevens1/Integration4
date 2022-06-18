@@ -16,7 +16,6 @@ const CheckboxesGroup2 = () => {
         one: true,
         two: false,
         three: false,
-        four: false,
     });
 
 
@@ -27,7 +26,7 @@ const CheckboxesGroup2 = () => {
         });
     };
 
-    const { one, two, three, four } = state;
+    const { one, two, three } = state;
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -35,19 +34,19 @@ const CheckboxesGroup2 = () => {
                 <FormGroup sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <FormControlLabel className="reason1"
                         control={
-                            <Checkbox checked={one} onChange={handleChange} name='one' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 }, marginRight: "1rem" }} />
+                            <Checkbox color="secondary" checked={one} onChange={handleChange} name='one' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 }, marginRight: "1rem" }} />
                         }
                         label={<Typography sx={{ color: "black", typography: "h4", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Ik vind dit niet kwetsend</Typography>}
                     />
-                    <FormControlLabel className="reason2" sx={{ marginTop: "2rem" }}
+                    <FormControlLabel  className="reason2" sx={{ marginTop: "2rem" }}
                         control={
-                            <Checkbox checked={two} onChange={handleChange} name='two' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 }, marginRight: "1rem" }} />
+                            <Checkbox color="secondary"  checked={two} onChange={handleChange} name='two' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 }, marginRight: "1rem" }} />
                         }
                         label={<Typography sx={{ color: "black", typography: "h4", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Ik wist nog niet dat dit mensen kwetst</Typography>}
                     />
                     <FormControlLabel className="reason3 " sx={{ marginTop: "2rem" }}
                         control={
-                            <Checkbox checked={three} onChange={handleChange} name='three' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 }, marginRight: "1rem" }} />
+                            <Checkbox color="secondary"  checked={three} onChange={handleChange} name='three' sx={{ '& .MuiSvgIcon-root': { fontSize: 50 }, marginRight: "1rem" }} />
                         }
                         label={<Typography sx={{ color: "black", typography: "h4", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Mijn vrienden gebruiken het</Typography>}
                     />

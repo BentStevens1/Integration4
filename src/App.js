@@ -27,12 +27,12 @@ function App() {
         <Route path="/pagetwo" element={<PageTwo />} />
         <Route path="/pagetwo-w" element={<PageTwo2 />} />
         <Route path="/pagethree" element={<PageThree />} />
-        <Route path="/pagethree-w/:videoId" element={<PageThree2 />} />
+        <Route path="/pagethree-w" element={<PageThree2 />} />
         <Route path="/VideoOverview" element={<VideoOverview />} />
         <Route path="/VideoOverview/:videoId" element={<VideoDetail/>}/>
         <Route path="/PageFour" element={<PageFour/>}/>
         <Route path="/PageFour-w" element={<PageFour2/>}/>
-        <Route path="/PageFive/" element={<PageFive/>}/>
+        <Route path="/PageFive" element={<PageFive/>}/>
         <Route path="/PageFive-w" element={<PageFive2/>}/>
         <Route path="/PageSix-w" element={<PageSix2/>}/>
         <Route path="/PageSix-w2" element={<PageSixW2 />} />
