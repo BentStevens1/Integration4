@@ -8,13 +8,13 @@ const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 function PageFour2(){
 
-    const { isLoading, data: words } = useQuery("words", async () => {
-        const data = await fetch(`${backendUrl}/api/words?populate=*`).then(r => r.json());
-        console.log(data);
-        return data;
-      });
+    // const { isLoading, data: words } = useQuery("words", async () => {
+    //     const data = await fetch(`${backendUrl}/api/words?populate=*`).then(r => r.json());
+    //     console.log(data);
+    //     return data;
+    //   });
 
-      console.log(words);
+    //   console.log(words);
 
       // geef gekozen woord mee
     return (
