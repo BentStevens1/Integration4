@@ -39,7 +39,7 @@ const CheckboxesGroup = ({ words }) => {
           aria-labelledby="radio-buttons-group-label"
           defaultValue="female"
           name="radio-buttons-group"
-          sx={{ display: "grid", gridTemplateColumns: " 1fr 1fr 1fr", gap: "1rem"}}
+          sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}
         >
           {
             words.map(word => <FormControlLabel className='select' key={word.id} value={word.attributes.content}
@@ -48,7 +48,8 @@ const CheckboxesGroup = ({ words }) => {
                   color: "black",
                   '&.Mui-checked': {
                     color: "black",
-                  },}} onChange={e => onRadioChange(e, word)} />
+                  },
+                }} onChange={e => onRadioChange(e, word)} />
               }
               label={<Typography sx={{ color: "black", typography: "h4", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>{word.attributes.content}</Typography>}
             />)
@@ -56,7 +57,7 @@ const CheckboxesGroup = ({ words }) => {
         </RadioGroup>
       </FormControl>
 
-      <Box sx={{marginTop: "15rem"}}>
+      <Box sx={{ marginTop: "15rem" }}>
         <Link to={`/VideoOverview`}><Button sx={{ typography: "h3", color: "secondary.main", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>dit kwetst mij niet</Button></Link>
         <Link to={`/PageThree-w`}><Button variant="contained" color="secondary" sx={{ typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Verder</Button></Link>
       </Box>
