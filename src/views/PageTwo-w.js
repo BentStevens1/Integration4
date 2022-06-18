@@ -35,7 +35,7 @@ function PageTwo2(){
     return (
         <>
             <Box sx={{height: '100vh', width:'100vw', display: 'flex', flexDirection: 'column' , alignItems: 'center', justifyContent: 'space-around'}}> 
-                <Typography color="secondary" sx={{ typography: "h3", width: "60rem", textAlign: "center", marginTop: "-5rem"}} >Selecteer de term die het meest wordt gebruikt in jouw omgeving:</Typography>
+                <Typography fontFamily={"bebas Neue"} variant='h3' color="secondary" sx={{ textAlign: 'center' }} >Selecteer de term die het meest wordt gebruikt in jouw omgeving:</Typography>
                 {words && (<>
                <CheckboxesGroup words={words} />
                </>)}

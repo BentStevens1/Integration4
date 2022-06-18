@@ -7,8 +7,6 @@ const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 function VideoOverview() {
 
-
-
   const { isLoading, error, data: videos } = useQuery("videos", async () => {
     const data = await fetch(`${backendUrl}/api/videos?populate=*`).then(r => r.json());
     return data;

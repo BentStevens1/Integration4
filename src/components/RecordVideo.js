@@ -4,7 +4,7 @@ import { Stack, Box, Button } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from 'react-query';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useStore from '../store/Store';
 
 
@@ -14,6 +14,9 @@ const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const RecordVideo = () => {
     
     const radio = useStore((state) => state.radio);
+    const overlay = useStore(state => state.overlay);
+    const setOverlay = useStore(state => state.setOverlay);
+    
     console.log(radio);
     const [videoBlob, setVideoBlob] = useState(null);
     const { handleSubmit, reset,  } = useForm();
@@ -67,6 +70,7 @@ const RecordVideo = () => {
                     // uploadVideo(videoBlob);
                     // postVideo(videoBlob);
                     setVideoBlob(videoBlob);
+                    setOverlay(true)
 
                 }}
               
@@ -74,12 +78,13 @@ const RecordVideo = () => {
             /> 
         
         </Box>    
-       
+            { overlay &&
             <Stack spacing={4} direction="row" sx={{ position: 'absolute', zIndex: "3", overflowX: 'hidden', bottom:"0", marginBottom:"5rem", marginLeft:"10rem"}} as="form" noValidate onSubmit={handleSubmit(test)}>
                 <LoadingButton color="secondary"
                     loadingIndicator="Adding video" type="submit" variant="contained" sx={{ color: "black", typography: "h4", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Upload</LoadingButton>
                     <Link to={`/VideoOverview`}><Button sx={{ color: "black", typography: "h4", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Toch geen video opnemen</Button></Link>
             </Stack>
+            }   
     
 
 

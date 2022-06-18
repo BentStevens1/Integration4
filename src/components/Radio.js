@@ -7,7 +7,7 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import { useForm } from "react-hook-form";
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { Button, Typography } from '@mui/material';
+import { Button, Typography, Stack } from '@mui/material';
 import { Link } from "react-router-dom";
 import useStore from '../store/Store';
 
@@ -72,10 +72,10 @@ const RadioBoxes = ({ words }) => {
         </RadioGroup>
       </FormControl>
 
-      <Box sx={{marginTop: "15rem"}}>
-        <Link to={`/VideoOverview`}><Button sx={{ typography: "h3", color: "secondary.main", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>dit kwetst mij niet</Button></Link>
+      <Stack direction="row" sx={{marginTop: "15rem"}}>
+        <Link to={`/VideoOverview`}><Button sx={{ typography: "h3", color: "secondary.main", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>liever niet</Button></Link>
         <Link to={`/VideoRecorder`}><Button variant="contained" color="secondary" sx={{ typography: "h3", color: "black", width: "20rem", padding: "1rem 0rem", marginRight: "3rem", fontFamily: "Bebas Neue" }}>Verder</Button></Link>
-      </Box>
+      </Stack>
     </Box>
   );
 }

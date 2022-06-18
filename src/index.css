@@ -53,11 +53,11 @@ code {
 
 
 .title2 {
-  padding: 2rem;
+  padding: 2rem 5rem;
   background-image: url('img/Vector2.png');
   background-repeat: no-repeat;
   background-position-y: 30px;
-  background-size: 100% 70%;
+  background-size: 100% 80%;
 }
 
 .reason1 {

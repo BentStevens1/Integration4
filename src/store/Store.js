@@ -7,6 +7,8 @@ const useStore = create((set) => ({
     RemoveWord: (newWords) => set((state) => ({selectedWs: newWords})),
     radio: '',
     CheckRadio: (word) => set((state) => ({radio: word})),
+    overlay: false,
+    setOverlay: (overlay) => set(state => ({ overlay })),
   }))
 
   export default useStore;
