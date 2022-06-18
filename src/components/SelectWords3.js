@@ -62,7 +62,7 @@ const CheckboxesGroup = ({ words }) => {
   return (
     <Box sx={{ display: 'flex', flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
       <FormControl sx={{ m: 6 }} component="fieldset" variant="standard" onSubmit={handleSubmit(onSubmit)}>
-        <FormGroup sx={{ display: "grid", gridTemplateColumns: " 1fr 1fr 1fr", gap: "1rem"}} >
+        <FormGroup sx={{ display: "grid", gridTemplateColumns: " 1fr 1fr", gap: "1rem"}} >
           {
             words.map(word => <FormControlLabel className="select" key={word.id}
               control={
