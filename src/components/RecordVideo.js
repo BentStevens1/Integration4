@@ -7,9 +7,7 @@ import { useMutation, useQueryClient } from 'react-query';
 import { Link, useNavigate } from "react-router-dom";
 import useStore from '../store/Store';
 
-
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
-
 
 const RecordVideo = () => {
 
@@ -22,8 +20,6 @@ const RecordVideo = () => {
     const [videoBlob, setVideoBlob] = useState(null);
     const { handleSubmit, reset, } = useForm();
     const queryClient = useQueryClient()
-
-
 
     const postVideo = async (blob) => {
         const formData = new FormData();
@@ -59,26 +55,16 @@ const RecordVideo = () => {
                         audio: true,
                         video: true
                     }}
-                    // timeLimit={30000}
                     isOnInitially
-
-                    //Replay controls and video not on loop 
                     replayVideoAutoplayAndLoopOff
                     showReplayControls
 
                     onRecordingComplete={(videoBlob) => {
-                        // Do something with the video...
                         console.log('videoBlob', videoBlob);
-                        // uploadVideo(videoBlob);
-                        // postVideo(videoBlob);
                         setVideoBlob(videoBlob);
                         setOverlay(true)
-
                     }}
-
-
                 />
-
             </Box>
             {overlay &&
                 <Stack spacing={4} direction="row" sx={{ position: 'absolute', zIndex: "3", overflowX: 'hidden', bottom: "0", marginBottom: "5rem", marginLeft: "10rem" }} as="form" noValidate onSubmit={handleSubmit(test)}>
@@ -87,9 +73,6 @@ const RecordVideo = () => {
                     <Link to={`/VideoOverview`}><Button sx={{ color: "black", typography: "h4", textTransform: "uppercase", fontFamily: "Bebas Neue" }}>Toch geen video opnemen</Button></Link>
                 </Stack>
             }
-
-
-
         </div>
     );
 };
