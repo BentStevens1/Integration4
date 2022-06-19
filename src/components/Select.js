@@ -20,7 +20,6 @@ const MenuProps = {
   },
 };
 
-
 export default function SelectChip({ label, options, field, error }) {
   const theme = useTheme();
 
@@ -35,7 +34,7 @@ export default function SelectChip({ label, options, field, error }) {
         input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
         renderValue={(selected) => (
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-              <Chip style={{backgroundColor: 'white'}} key={selected} label={options.find(check => check.id === selected).name} />
+            <Chip style={{ backgroundColor: 'white' }} key={selected} label={options.find(check => check.id === selected).name} />
           </Box>
         )}
         MenuProps={MenuProps}

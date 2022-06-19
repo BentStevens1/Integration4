@@ -1,4 +1,4 @@
-import { Typography, Box, Button } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import CheckboxesGroup from '../components/SelectWords3';
 import { useQuery } from "react-query";
 
@@ -14,24 +14,6 @@ function PageFour() {
         return words.slice(0, 6);
     });
 
-    const getRandomInt = (max) => {
-        return Math.floor(Math.random() * max);
-    }
-
-    // const fillArray = () => {
-    //     var value = [];
-    //     var n = 5;
-    //     for (var i = 0; i < n; i++) {
-    //       while (value.length < 5) {
-    //         var number = getRandomInt(length);
-    //         var random = words.data[number].id;
-    //         if (value.includes(number) == false && random !== words.data[length - 1].id) {
-    //           value.push(number);
-    //         }
-    //       }
-    //     }
-    //     return value;
-    //   };
 
     return (
         <>

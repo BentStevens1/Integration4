@@ -1,8 +1,6 @@
 import RecordVideo from '../components/RecordVideo';
-import { Button, Box, Typography, FormControl, FormGroup, FormControlLabel, Checkbox } from '@mui/material';
-import { Link } from "react-router-dom";
+import { Box, Typography, FormControl, FormGroup, FormControlLabel, Checkbox } from '@mui/material';
 import useStore from '../store/Store';
-
 
 
 function VideoRecorder() {

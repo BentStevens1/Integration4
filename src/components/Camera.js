@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
 const Camera = () => {
-    
+
     const videoRef = useRef(null);
 
     const getVideo = () => {
@@ -19,7 +19,7 @@ const Camera = () => {
             })
     }
 
-    useEffect( () => {
+    useEffect(() => {
         getVideo();
     }, [videoRef])
 

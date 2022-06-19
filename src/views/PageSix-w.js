@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { Typography, Button, Box, Stack, SwipeableDrawer } from '@mui/material';
-import { Link } from "react-router-dom";
 import InfoIcon from '@mui/icons-material/Info';
 import useStore from '../store/Store';
 import { useNavigate } from "react-router-dom";
-
 
 function PageSix2() {
     const navigate = useNavigate();
@@ -42,10 +40,7 @@ function PageSix2() {
                             <Typography color="black" sx={{ typography: "h4", fontFamily: "Open Sans", width: "100%", marginTop: "2rem" }}>{radio.attributes.explanation}</Typography>
                         </Stack>
                     </SwipeableDrawer>
-
                     <Button onClick={navigateTo} sx={{ typography: "h3", bgcolor: "secondary.main", color: "black", width: "20rem", padding: "1rem 0rem", fontFamily: "Bebas Neue" }}>verder</Button>
-
-
                 </Stack>
             </Box>
         </>

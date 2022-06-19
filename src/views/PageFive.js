@@ -1,33 +1,12 @@
-import { Typography, Box, Button } from '@mui/material';
+import { Typography, Box} from '@mui/material';
 import RadioGroup from '../components/Radio';
-import { useQuery } from "react-query";
-import { Link, useParams } from "react-router-dom";
 import useStore from '../store/Store';
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 function PageFive() {
-    // const { ids } = useParams();
-    // const selectedIds = ids.split(`+`);
-    // console.log(selectedIds);
-
     const selectedWs = useStore((state) => state.selectedWs);
     console.log(selectedWs);
-
-    // const { isLoading, data: words } = useQuery("words", async () => {
-    //     const data = await fetch(`${backendUrl}/api/words?populate=*`).then(r => r.json());
-    //     return data;
-    // });
-
-    // console.log(words);
-    // const selectedWords = [];
-
-    // selectedIds.forEach(selected => {
-    //     console.log(selected);
-    //     selectedWords.push(words.data[selected]);
-    // });
-
-    // console.log(selectedWords);
 
     return (
         <>

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
@@ -16,10 +15,6 @@ const CheckboxesGroup = ({ words }) => {
   const selectedWords = useStore((state) => state.selectedWs)
   const AddSelected = useStore((state) => state.AddSelectedWords)
   const RemoveSelected = useStore((state) => state.RemoveWord)
-
-
-  // store in zustand ipv state zodat je ze in alle andere pagina's ook kan gebruiken
-  // const [selectedWords, setSelectedWords] = useState([])
 
   const { handleSubmit } = useForm({
     defaultValues: {
@@ -40,20 +35,6 @@ const CheckboxesGroup = ({ words }) => {
       }
     }
   }
-
-  console.log(selectedWords);
-  // const onCheckboxChange = (e, word) => {
-  //   if (e.currentTarget.checked) {
-  //     setSelectedWords([...selectedWords, word])
-  //   } else {
-  //     const index = selectedWords.findIndex(o => o.id === word.id)
-  //     if (index > -1) {
-  //       const newWords = [...selectedWords];
-  //       newWords.splice(index, 1);
-  //       setSelectedWords(newWords);
-  //     }
-  //   }
-  // }
 
   const onSubmit = () => {
 

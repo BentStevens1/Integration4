@@ -17,12 +17,6 @@ function VideoOverview() {
     window.location.reload(false);
   }
 
-  // const check = () => {
-  //   if (allVideos.length === 1) {
-  //     reload();
-  //   }
-  // }
-
   return (
     <Box sx={{ padding: '3rem' }}>
       {isLoading && <p>Videos aan het laden...</p>}

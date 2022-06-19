@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { Typography, Button, Box, Stack, SwipeableDrawer } from '@mui/material';
-import { Link } from "react-router-dom";
 import InfoIcon from '@mui/icons-material/Info';
 import useStore from '../store/Store';
 import { useNavigate } from "react-router-dom";
@@ -22,7 +21,6 @@ function PageSixW2() {
     const navigateTo = () => {
         navigate('/VideoOverview');
     } 
-
 
     return (
         <>
