@@ -1,4 +1,3 @@
-// placeholder voor dat we de video's hebben/ kunnen opnemen
 import { Alert, Button, Snackbar, Stack, Typography } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { Controller, useForm } from "react-hook-form";
