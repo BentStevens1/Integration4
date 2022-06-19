@@ -13,7 +13,7 @@ const VideoCard = () => {
         <article>
             <Card sx={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}} >
                            <ReactPlayer
-                            url='youtube.com/watch?v=XQ46oV-gQMg'
+                            url='https://youtube.com/shorts/OeEWNKdFcSs?feature=share'
                             width='100vw'
                             height='100vh'
                             controls={true}
